@@ -101,10 +101,10 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
-  m_GravityScale: 25
-  m_Material: {fileID: 0}
+  m_GravityScale: 8
+  m_Material: {fileID: 6200000, guid: 159579b3e2a19704dbd11d3c8db02839, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -176,6 +176,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 26bbd19d-754d-4489-aa6e-b67b2802ead9
     m_ActionName: Game/New action[/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5530521355126855769}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: Jump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c3e560de-babe-4d1b-ac94-beaa5f3c0414
+    m_ActionName: PlayerControls/Jump[/Keyboard/space,/DualSenseGamepadHID/buttonSouth]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerControls
@@ -193,5 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2815eeb1bac565c4e9d9f5419a5e2ba3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  smoothTime: 0.1
+  speed: 8
+  smoothTime: 0.07
+  jumpForce: 11
+  jumpForceHolding: 1.3
