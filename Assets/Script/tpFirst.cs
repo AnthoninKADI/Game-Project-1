@@ -1,42 +1,35 @@
 using System.Collections;
+using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
-public class TPsecond : MonoBehaviour
+public class tpFirst : MonoBehaviour
 {
 
     private GameObject player;
-    public GameObject TP1;
-
-
+    [SerializeField]
+    private GameObject tp2;
 
     private void Awake()
     {
-
         player = GameObject.FindWithTag("Player");
-
-
     }
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       
         if (collision.tag == "Player")
         {
-            Debug.Log("bing");
-            player.transform.position = new Vector2(TP1.transform.position.x, TP1.transform.position.y);
-
-
+            player.transform.position = new Vector2(tp2.transform.position.x, tp2.transform.position.y);
             StartCoroutine(waiter());
-
         }
     }
 
     IEnumerator waiter()
     {
-        TP1.SetActive(false);
+        tp2.SetActive(false);
         yield return new WaitForSeconds(2f);
-        TP1.SetActive(true);
+        tp2.SetActive(true);
     }
 }
+
