@@ -4,48 +4,28 @@ using UnityEngine;
 
 public class Elevator : MonoBehaviour
 {
-
-    public Transform player;
-    public Transform elevatorswitch;
-    public Transform downpos;
-    public Transform upperpos;
+    public Animator animator;
+    private GameObject player;
 
 
-    public float speed;
-    bool iselevatordown;
- 
-    void Start()
+
+    private void Awake()
     {
-        
+
+        player = GameObject.FindWithTag("Player");
+
+
     }
 
-   
-    void Update()
-    {
-        StartElevator();
-    }
-    void StartElevator()
-    {
-        if (Vector2.Distance(player.position,elevatorswitch.position) < 0.5f && Input.GetKeyDown(KeyCode.E))
-        {
-            if(transform.position.y <= downpos.position.y)
-            {
-                iselevatordown = true;
-            }
-            else if(transform.position.y >= upperpos.position.y)
-            {
-                iselevatordown = false;
-            }
-        }
 
-        if (!iselevatordown)
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
         {
-            Debug.Log("yaya");
-            transform.position = Vector2.MoveTowards(transform.position,upperpos.position,speed * Time.deltaTime);
+            animator.SetTrigger("moovUp");
         }
-        else
-        {
-            transform.position = Vector2.MoveTowards(transform.position,downpos.position,speed * Time.deltaTime);
-        }
+            
     }
+
+    
 }
