@@ -22,6 +22,15 @@
                     "processors": "",
                     "interactions": "Tap(duration=0.3)",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Electric",
+                    "type": "Button",
+                    "id": "5c187157-88bc-483e-9760-81f9bbdd98ab",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -121,6 +130,28 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "019bafd0-2f62-46b1-a01d-0fabbce3bfbc",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard_Mouse",
+                    "action": "Electric",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e6216710-cd44-48d3-97a3-7b853a96fd66",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Electric",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
