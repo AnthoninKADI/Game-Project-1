@@ -18,17 +18,23 @@ public class PlayerController : MonoBehaviour
     public float smoothTime = 0.1f;
 
     [Header("Jump")]
-    private bool isGrounded = false;
     public float jumpForce = 2f;
     public float jumpForceHolding = 0.5f;
+    private bool isGrounded = false;
     private bool isHolding = false;
 
+    [Header("Elevator")]
+    public ElevatorTwo elevatorScript;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
-
+    private void FixedUpdate()
+    {
+        SmoothedMovement();
+        AddJumpForce();
+    }
 
     public void Movement(InputAction.CallbackContext context)
     {
@@ -55,6 +61,13 @@ public class PlayerController : MonoBehaviour
             isHolding = false;
         }
     }
+    public void Electric(InputAction.CallbackContext context)           // interaction
+    {
+        if (context.ReadValueAsButton())
+        {
+            elevatorScript.StartElevator();
+        }
+    }
 
     private void AddJumpForce()     // let the player jump higher if is holding the jump button
     {
@@ -64,7 +77,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    private void SmoothedMovement()
     {
         smoothedMovementInput = Vector2.SmoothDamp(
             smoothedMovementInput,
@@ -75,7 +88,6 @@ public class PlayerController : MonoBehaviour
         velocity = rb.velocity;
         velocity.x = smoothedMovementInput.x * speed;
         rb.velocity = velocity;
-        AddJumpForce();
     }
 
     void OnCollisionEnter2D(Collision2D collision)

@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ElevatorTwo : MonoBehaviour
 {
-
     public Transform player;
     public Transform elevatorswitch;
     public Transform downPose;
@@ -14,35 +14,42 @@ public class ElevatorTwo : MonoBehaviour
 
     public float speed;
     public bool iselevatordown;
+
+    public bool playerInside;
   
     void Start()
     {
-        
+        playerInside = false;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
   
     void Update()
     {
-        StartElevator();
+        ElevatorMovement();
         DisplayColor();
     }
 
     public void StartElevator()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (playerInside)
         {
-            if(transform.position.y == downPose.position.y)
+            if (transform.position.y == downPose.position.y)
             {
                 iselevatordown = true;
             }
-            else if(transform.position.y == upPose.position.y)
+            else if (transform.position.y == upPose.position.y)
             {
                 iselevatordown = false;
             }
         }
+    }
+
+    private void ElevatorMovement()
+    {
         if (iselevatordown)
         {
-            transform.position = Vector2.MoveTowards(transform.position,upPose.position, speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, upPose.position, speed * Time.deltaTime);
         }
         else
         {
@@ -50,7 +57,7 @@ public class ElevatorTwo : MonoBehaviour
         }
     }
 
-    public void DisplayColor()
+    private void DisplayColor()
     {
         if(transform.position.y <= downPose.position.y || transform.position.y >= upPose.position.y)
 
@@ -60,6 +67,22 @@ public class ElevatorTwo : MonoBehaviour
         else
         {
             elevator.color = Color.red;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            playerInside = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            playerInside = false;
         }
     }
 }
