@@ -182,7 +182,6 @@ GameObject:
   - component: {fileID: 5530521355126855765}
   - component: {fileID: 5530521355126855768}
   - component: {fileID: 5530521355126855769}
-  - component: {fileID: 1596526835}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -404,15 +403,3 @@ MonoBehaviour:
   ElectricityActive: 0
   interationCooldown: 1
   interationDuration: 0.5
---- !u!114 &1596526835
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5530521355126855762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b7a0135fa28bf946ade919a38428d01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

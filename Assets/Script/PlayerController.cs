@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     [Header("Electricity")]
     [SerializeField]
     private GameObject electric;
+    [HideInInspector]
     public bool ElectricityActive;
     private float lastPressed;
     public float interationCooldown = 1f;
