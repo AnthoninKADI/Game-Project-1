@@ -11,7 +11,7 @@ public class VentScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            animator.enabled = true;
+            animator.SetTrigger("Open");
         }
     }
 
@@ -19,6 +19,7 @@ public class VentScript : MonoBehaviour
     {
         if (collision.CompareTag("Teleporter"))
         {
+            animator.SetTrigger("Open");
             Vent = collision.gameObject;
         }
     }
