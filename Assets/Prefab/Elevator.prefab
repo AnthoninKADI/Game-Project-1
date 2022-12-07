@@ -332,14 +332,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf69e31d79086244785cd88bbb0dd8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  playerTransform: {fileID: 0}
   elevatorswitch: {fileID: 1854549792137228455}
   downPose: {fileID: 1854549791259969806}
   upPose: {fileID: 1854549791281718060}
   elevator: {fileID: 1854549791512081143}
   speed: 3
   iselevatordown: 0
-  playerInside: 0
+  playerController: {fileID: 5530521355126855769, guid: 56cd2d51daf632544b2a85174aad9817, type: 3}
 --- !u!1 &1854549792322423156
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,5 +540,5 @@ Transform:
   - {fileID: 1854549791281718060}
   - {fileID: 1854549791259969806}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

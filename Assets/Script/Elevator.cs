@@ -4,9 +4,9 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class ElevatorTwo : MonoBehaviour
+public class Elevator : MonoBehaviour
 {
-    public Transform player;
+    public Transform playerTransform;
     public Transform elevatorswitch;
     public Transform downPose;
     public Transform upPose;
@@ -15,12 +15,11 @@ public class ElevatorTwo : MonoBehaviour
     public float speed;
     public bool iselevatordown;
 
-    public bool playerInside;
-  
+    public PlayerController playerController;
+
     void Start()
     {
-        playerInside = false;
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
   
@@ -32,16 +31,13 @@ public class ElevatorTwo : MonoBehaviour
 
     public void StartElevator()
     {
-        if (playerInside)
+        if (transform.position.y == downPose.position.y)
         {
-            if (transform.position.y == downPose.position.y)
-            {
-                iselevatordown = true;
-            }
-            else if (transform.position.y == upPose.position.y)
-            {
-                iselevatordown = false;
-            }
+            iselevatordown = true;
+        }
+        else if (transform.position.y == upPose.position.y)
+        {
+            iselevatordown = false;
         }
     }
 
@@ -70,19 +66,11 @@ public class ElevatorTwo : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Player") && playerController.ElectricityActive)
         {
-            playerInside = true;
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            playerInside = false;
+            StartElevator();
         }
     }
 }
