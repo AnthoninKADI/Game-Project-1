@@ -6,16 +6,19 @@ using UnityEngine.InputSystem;
 
 public class Elevator : MonoBehaviour
 {
-    public Transform playerTransform;
-    public Transform elevatorswitch;
-    public Transform downPose;
-    public Transform upPose;
-    public SpriteRenderer elevator;
+    [SerializeField]
+    private Transform downPose;
+    [SerializeField]
+    private Transform upPose;
+    [SerializeField]
+    private SpriteRenderer elevator;
 
-    public float speed;
-    public bool iselevatordown;
+    [SerializeField]
+    private float speed;
+    [SerializeField]
+    private bool iselevatordown;
 
-    public PlayerController playerController;
+    private PlayerController playerController;
 
     void Start()
     {
