@@ -10,6 +10,8 @@ public class tpFirst : MonoBehaviour
     private GameObject player;
     [SerializeField]
     private GameObject tp2;
+   
+
 
     private void Awake()
     {
@@ -18,7 +20,7 @@ public class tpFirst : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.gameObject.CompareTag("Electric"))
         {
             player.transform.position = new Vector2(tp2.transform.position.x, tp2.transform.position.y);
             StartCoroutine(waiter());
