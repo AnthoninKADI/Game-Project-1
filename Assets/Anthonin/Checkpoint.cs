@@ -9,7 +9,7 @@ public class Checkpoint : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (IsActivate == true) return;
-        if (collision.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
             GameManager.instance.CurrentCheckpoint = gameObject;
             IsActivate = true;

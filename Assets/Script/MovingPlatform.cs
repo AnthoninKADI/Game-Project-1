@@ -14,7 +14,6 @@ public class MovingPlatform : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(turnback);
         if(transform.position.x >= pos2.position.x)
         {
             turnback = true;
