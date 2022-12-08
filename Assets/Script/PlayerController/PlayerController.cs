@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -23,6 +24,11 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded = false;
     private bool isHolding = false;
 
+    [Header("WallJump")]
+    public bool leftHitbox = false;
+    public bool rightHitbox = false;
+    public float wallJumpForce;
+
     [Header("Electricity")]
     [SerializeField]
     private GameObject electric;
@@ -31,8 +37,6 @@ public class PlayerController : MonoBehaviour
     private float lastPressed;
     public float interationCooldown = 1f;
     public float interationDuration = 2f;
-
-
 
     private void Start()
     {
@@ -44,6 +48,7 @@ public class PlayerController : MonoBehaviour
     {
         SmoothedMovement();
         AddJumpForce();
+        WallJump();
     }
 
     public void Movement(InputAction.CallbackContext context)
@@ -55,10 +60,26 @@ public class PlayerController : MonoBehaviour
     {
         if (context.started)
         {
-            if (rb.velocity.y == 0 && isGrounded)
+            if (!leftHitbox && !rightHitbox)
             {
-                isHolding = true;
-                rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+                if (rb.velocity.y == 0 && isGrounded)
+                {
+                    isHolding = true;
+                    rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+                }
+            }
+            else
+            {
+                if (leftHitbox)
+                {
+                    rb.gravityScale = 8;
+                    rb.AddForce(new Vector2(wallJumpForce, jumpForce), ForceMode2D.Impulse);
+                }
+                else
+                {
+                    rb.gravityScale = 8;
+                    rb.AddForce(new Vector2(wallJumpForce, jumpForce), ForceMode2D.Impulse);
+                }
             }
         }
 
@@ -109,11 +130,20 @@ public class PlayerController : MonoBehaviour
             smoothedMovementInput,
             movementInput,
             ref movementInputSmoothVelocity,
+
             smoothTime);
 
         velocity = rb.velocity;
         velocity.x = smoothedMovementInput.x * speed;
         rb.velocity = velocity;
+    }
+
+    private void WallJump()
+    {
+        if(leftHitbox || rightHitbox)
+        {
+            //rb.gravityScale = 0;
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
