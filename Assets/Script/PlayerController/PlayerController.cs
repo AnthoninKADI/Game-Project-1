@@ -27,7 +27,8 @@ public class PlayerController : MonoBehaviour
     [Header("WallJump")]
     public bool leftHitbox = false;
     public bool rightHitbox = false;
-    public float wallJumpForce;
+    //public float wallJumpForce;
+    //private bool hasJumped;
 
     [Header("Electricity")]
     [SerializeField]
@@ -72,13 +73,20 @@ public class PlayerController : MonoBehaviour
             {
                 if (leftHitbox)
                 {
-                    rb.gravityScale = 8;
-                    rb.AddForce(new Vector2(wallJumpForce, jumpForce), ForceMode2D.Impulse);
+                    /*if (hasJumped)
+                    {
+                        rb.velocity = new Vector2(smoothedMovementInput.x * speed + wallJumpForce, jumpForce);
+                        hasJumped = false;
+                    }*/
+                    //rb.gravityScale = 8;
+                    //rb.AddForce(new Vector2(wallJumpForce, jumpForce), ForceMode2D.Impulse);
                 }
                 else
                 {
-                    rb.gravityScale = 8;
-                    rb.AddForce(new Vector2(wallJumpForce, jumpForce), ForceMode2D.Impulse);
+                    //rb.gravityScale = 8;
+                    //rb.velocity = new Vector2(smoothedMovementInput.x * speed + wallJumpForce, jumpForce);
+
+                    //rb.AddForce(new Vector2(wallJumpForce, jumpForce), ForceMode2D.Impulse);
                 }
             }
         }
@@ -133,9 +141,15 @@ public class PlayerController : MonoBehaviour
 
             smoothTime);
 
-        velocity = rb.velocity;
-        velocity.x = smoothedMovementInput.x * speed;
-        rb.velocity = velocity;
+        if(!leftHitbox && !rightHitbox)
+        {
+            rb.velocity = new Vector2(smoothedMovementInput.x * speed, rb.velocity.y);
+        }
+
+        //velocity = rb.velocity;
+        //velocity.x = smoothedMovementInput.x * speed;
+        //rb.velocity = velocity;
+
     }
 
     private void WallJump()
