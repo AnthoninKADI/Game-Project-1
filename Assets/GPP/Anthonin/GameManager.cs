@@ -8,7 +8,12 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public List<GameObject> checkpoints;
     public GameObject CurrentCheckpoint;
-    public GameObject Player;
+    public PlayerMovement Player;
+    //public PlayerController Player;
+    public float RespawnTime;
+    public float BlackScreenAppearAfter;
+    public GameObject BlackScreenObject;
+
 
     private void Awake()
     {
@@ -18,6 +23,32 @@ public class GameManager : MonoBehaviour
 
     public void Die()
     {
-        Player.transform.position = CurrentCheckpoint.transform.position;
+        Freeze(true);
+        Invoke("BlackScreenOn", BlackScreenAppearAfter);
+        Invoke("Respawn", RespawnTime);
     }
+
+    private void Respawn()
+    {
+        Player.transform.position = CurrentCheckpoint.transform.position;
+        Freeze(false);
+        Invoke("BlackScreenOn", 2f);
+    }
+
+    private void Freeze(bool freeze)
+    {
+        Player.SetSpeed(!freeze);
+    }
+
+    private void BlackScreenOn()
+    {
+        BlackScreenObject.SetActive(true);
+    }
+
+    private void BlackScreenOff()
+    {
+        BlackScreenObject.SetActive(false);
+    }
+
+
 }
