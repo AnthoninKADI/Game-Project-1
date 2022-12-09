@@ -8,7 +8,9 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public List<GameObject> checkpoints;
     public GameObject CurrentCheckpoint;
-    public GameObject Player;
+    public PlayerMovement Player;
+    //public PlayerController Player;
+    public float RespawnTime;
 
     private void Awake()
     {
@@ -18,6 +20,20 @@ public class GameManager : MonoBehaviour
 
     public void Die()
     {
-        Player.transform.position = CurrentCheckpoint.transform.position;
+        Freeze(true);
+        Invoke("Respawn", RespawnTime);
     }
+
+    private void Respawn()
+    {
+        Player.transform.position = CurrentCheckpoint.transform.position;
+        Freeze(false); 
+    }
+
+    private void Freeze(bool freeze)
+    {
+        Player.SetSpeed(!freeze);
+    }
+
+
 }

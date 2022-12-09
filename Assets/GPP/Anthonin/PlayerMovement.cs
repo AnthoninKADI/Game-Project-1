@@ -4,6 +4,7 @@ using UnityEngine.Events;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed;
+    private float currentspeed;
     public float jumpForce;
 
     public Transform GroundCheck;
@@ -19,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        currentspeed = speed;
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         Collider.enabled = true;
@@ -28,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
     {
         onGround = Physics2D.OverlapCircle((Vector2)GroundCheck.position, collisionRadius, groundMask);
 
-        float x = Input.GetAxis("Horizontal") * speed;
+        float x = Input.GetAxis("Horizontal") * currentspeed;
         Vector2 dir = new Vector2(x, rb.velocity.y);
 
         Move(dir);
@@ -59,5 +61,17 @@ public class PlayerMovement : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(GroundCheck.position, collisionRadius);
+    }
+
+    public void SetSpeed(bool IsMoving)
+    {
+        if (IsMoving)
+        {
+            currentspeed = speed;
+        }
+        else
+        {
+            currentspeed = 0f;
+        }
     }
 }
