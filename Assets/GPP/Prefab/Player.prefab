@@ -46,7 +46,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.5, y: 0}
+  m_Offset: {x: 0.47, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -73,6 +73,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerController: {fileID: 5530521355126855769}
   rb: {fileID: 5530521355126855771}
+  timeToFall: 1
   right: 1
 --- !u!1 &268028396
 GameObject:
@@ -305,7 +306,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.5, y: 0}
+  m_Offset: {x: -0.47, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -332,6 +333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerController: {fileID: 5530521355126855769}
   rb: {fileID: 5530521355126855771}
+  timeToFall: 1
   right: 0
 --- !u!1 &5530521355126855762
 GameObject:
@@ -568,8 +570,8 @@ MonoBehaviour:
   jumpForceHolding: 1.3
   leftHitbox: 0
   rightHitbox: 0
-  wallJumpForce: 15
-  hasWallJumped: 0
+  wallJumpForce: {x: 10, y: 17}
+  jumpTime: 0.3
   electric: {fileID: 268028396}
   ElectricityActive: 0
   interationCooldown: 1

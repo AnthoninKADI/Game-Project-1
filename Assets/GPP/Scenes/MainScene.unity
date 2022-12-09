@@ -1386,22 +1386,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 135190840, guid: 56cd2d51daf632544b2a85174aad9817, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.47
-      objectReference: {fileID: 0}
-    - target: {fileID: 1233403588, guid: 56cd2d51daf632544b2a85174aad9817, type: 3}
-      propertyPath: timeToFall
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1233403589, guid: 56cd2d51daf632544b2a85174aad9817, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.47
-      objectReference: {fileID: 0}
-    - target: {fileID: 1506986197, guid: 56cd2d51daf632544b2a85174aad9817, type: 3}
-      propertyPath: timeToFall
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5530521355126855762, guid: 56cd2d51daf632544b2a85174aad9817, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1449,18 +1433,6 @@ PrefabInstance:
     - target: {fileID: 5530521355126855766, guid: 56cd2d51daf632544b2a85174aad9817, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5530521355126855769, guid: 56cd2d51daf632544b2a85174aad9817, type: 3}
-      propertyPath: jumpTime
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5530521355126855769, guid: 56cd2d51daf632544b2a85174aad9817, type: 3}
-      propertyPath: wallJumpForce.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5530521355126855769, guid: 56cd2d51daf632544b2a85174aad9817, type: 3}
-      propertyPath: wallJumpForce.y
-      value: 17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
