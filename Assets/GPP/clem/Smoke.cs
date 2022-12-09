@@ -19,7 +19,9 @@ public class Smoke : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            //Destroy(player);
+            //tuer le player, lancer l'anim de whip noir et retour au checkpoint
+            //GameManager.instance.Die();
+
             mysprite.color = new Color(255, 163, 0, 0);
 
         }
