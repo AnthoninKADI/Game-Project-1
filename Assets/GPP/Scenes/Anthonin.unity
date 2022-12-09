@@ -1336,8 +1336,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &946917778
-BoxCollider2D:
+--- !u!60 &946917778
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1349,7 +1349,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.23635927}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.28866667}
@@ -1359,9 +1359,12 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.94994813}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 0.5773587}
+      - {x: -0.47313204, y: -0.22508387}
+      - {x: 0.46968058, y: -0.2229988}
+  m_UseDelaunayMesh: 0
 --- !u!1 &1036366067
 GameObject:
   m_ObjectHideFlags: 0
@@ -2512,6 +2515,8 @@ MonoBehaviour:
   CurrentCheckpoint: {fileID: 0}
   Player: {fileID: 2079412986}
   RespawnTime: 1.5
+  BlackScreenAppearAfter: 0.7
+  BlackScreenObject: {fileID: 1615229416}
 --- !u!4 &2107873531
 Transform:
   m_ObjectHideFlags: 0
