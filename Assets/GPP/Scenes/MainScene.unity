@@ -374,10 +374,10 @@ Transform:
   - {fileID: 709118424}
   - {fileID: 1481746416}
   - {fileID: 989691148}
+  - {fileID: 1104491759}
   - {fileID: 1741599770}
   - {fileID: 709933579}
   - {fileID: 1673964170}
-  - {fileID: 1104491759}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -749,8 +749,8 @@ GameObject:
   - component: {fileID: 989691150}
   - component: {fileID: 989691149}
   m_Layer: 0
-  m_Name: Ground3
-  m_TagString: Ground
+  m_Name: Wall
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -860,8 +860,8 @@ GameObject:
   - component: {fileID: 1104491761}
   - component: {fileID: 1104491760}
   m_Layer: 0
-  m_Name: Ground3 (1)
-  m_TagString: Ground
+  m_Name: Wall2
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -874,7 +874,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1104491758}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -25.3, y: -1.988693, z: 0.119158834}
+  m_LocalPosition: {x: -33.87, y: -1.988693, z: 0.119158834}
   m_LocalScale: {x: 0.95, y: -8.28, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1371,7 +1371,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1741599766}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.26, y: 3.05, z: 0.119158834}
+  m_LocalPosition: {x: -15.49, y: 3.05, z: 0.119158834}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1386,17 +1386,21 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 268028396, guid: 56cd2d51daf632544b2a85174aad9817, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 268028397, guid: 56cd2d51daf632544b2a85174aad9817, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1108248509, guid: 56cd2d51daf632544b2a85174aad9817, type: 3}
+    - target: {fileID: 135190840, guid: 56cd2d51daf632544b2a85174aad9817, type: 3}
       propertyPath: m_Offset.x
-      value: 0
+      value: 0.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 1233403588, guid: 56cd2d51daf632544b2a85174aad9817, type: 3}
+      propertyPath: timeToFall
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1233403589, guid: 56cd2d51daf632544b2a85174aad9817, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 1506986197, guid: 56cd2d51daf632544b2a85174aad9817, type: 3}
+      propertyPath: timeToFall
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5530521355126855762, guid: 56cd2d51daf632544b2a85174aad9817, type: 3}
       propertyPath: m_Name
@@ -1408,7 +1412,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5530521355126855766, guid: 56cd2d51daf632544b2a85174aad9817, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -33.09
+      value: -35.26
       objectReference: {fileID: 0}
     - target: {fileID: 5530521355126855766, guid: 56cd2d51daf632544b2a85174aad9817, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1447,8 +1451,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5530521355126855769, guid: 56cd2d51daf632544b2a85174aad9817, type: 3}
-      propertyPath: speed
-      value: 8
+      propertyPath: jumpTime
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5530521355126855769, guid: 56cd2d51daf632544b2a85174aad9817, type: 3}
+      propertyPath: wallJumpForce.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5530521355126855769, guid: 56cd2d51daf632544b2a85174aad9817, type: 3}
+      propertyPath: wallJumpForce.y
+      value: 17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

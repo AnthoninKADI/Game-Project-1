@@ -24,11 +24,16 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded = false;
     private bool isHolding = false;
 
-    [Header("WallJump")]
+    [Header("WallJump")]            // public/private a verifier
+    [HideInInspector]
     public bool leftHitbox = false;
+    [HideInInspector]
     public bool rightHitbox = false;
-    //public float wallJumpForce;
-    //private bool hasJumped;
+    [SerializeField]
+    private Vector2 wallJumpForce;
+    [SerializeField]
+    private float jumpTime;
+    private bool hasWallJumped = false;
 
     [Header("Electricity")]
     [SerializeField]
@@ -49,7 +54,6 @@ public class PlayerController : MonoBehaviour
     {
         SmoothedMovement();
         AddJumpForce();
-        WallJump();
     }
 
     public void Movement(InputAction.CallbackContext context)
@@ -71,22 +75,21 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                if (leftHitbox)
+                if (!hasWallJumped)
                 {
-                    /*if (hasJumped)
+                    if (leftHitbox)
                     {
-                        rb.velocity = new Vector2(smoothedMovementInput.x * speed + wallJumpForce, jumpForce);
-                        hasJumped = false;
-                    }*/
-                    //rb.gravityScale = 8;
-                    //rb.AddForce(new Vector2(wallJumpForce, jumpForce), ForceMode2D.Impulse);
-                }
-                else
-                {
-                    //rb.gravityScale = 8;
-                    //rb.velocity = new Vector2(smoothedMovementInput.x * speed + wallJumpForce, jumpForce);
+                        hasWallJumped = true;
+                        rb.velocity = new Vector2(smoothedMovementInput.x * speed + wallJumpForce.x, wallJumpForce.y);
+                        Invoke("NotWallJumping", jumpTime);
+                    }
 
-                    //rb.AddForce(new Vector2(wallJumpForce, jumpForce), ForceMode2D.Impulse);
+                    else
+                    {
+                        hasWallJumped = true;
+                        rb.velocity = new Vector2(smoothedMovementInput.x * speed - wallJumpForce.x, wallJumpForce.y);
+                        Invoke("NotWallJumping", jumpTime);
+                    }
                 }
             }
         }
@@ -101,11 +104,21 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void AddJumpForce()     // let the player jump higher if is holding the jump button
+    private void SmoothedMovement()
     {
-        if (isHolding)
+        smoothedMovementInput = Vector2.SmoothDamp(
+            smoothedMovementInput,
+            movementInput,
+            ref movementInputSmoothVelocity,
+
+            smoothTime);
+
+        if (!leftHitbox && !rightHitbox)
         {
-            rb.AddForce(new Vector2(0, jumpForceHolding), ForceMode2D.Impulse);
+            if (!hasWallJumped)
+            {
+                rb.velocity = new Vector2(smoothedMovementInput.x * speed, rb.velocity.y);
+            }
         }
     }
 
@@ -132,31 +145,16 @@ public class PlayerController : MonoBehaviour
         lastPressed = Time.time;
     }
 
-    private void SmoothedMovement()
+    private void NotWallJumping()
     {
-        smoothedMovementInput = Vector2.SmoothDamp(
-            smoothedMovementInput,
-            movementInput,
-            ref movementInputSmoothVelocity,
-
-            smoothTime);
-
-        if(!leftHitbox && !rightHitbox)
-        {
-            rb.velocity = new Vector2(smoothedMovementInput.x * speed, rb.velocity.y);
-        }
-
-        //velocity = rb.velocity;
-        //velocity.x = smoothedMovementInput.x * speed;
-        //rb.velocity = velocity;
-
+        hasWallJumped = false;
     }
 
-    private void WallJump()
+    private void AddJumpForce()     // let the player jump higher if is holding the jump button
     {
-        if(leftHitbox || rightHitbox)
+        if (isHolding)
         {
-            //rb.gravityScale = 0;
+            rb.AddForce(new Vector2(0, jumpForceHolding), ForceMode2D.Impulse);
         }
     }
 
