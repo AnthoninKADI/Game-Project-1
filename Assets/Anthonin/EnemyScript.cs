@@ -7,7 +7,8 @@ public class EnemyScript : MonoBehaviour
     [Header("Others")]
     public Collider2D EnemySpotCollider;
     public Animator ShootAnimation;
-    public Animator ScreenAnimation;
+    public GameObject BlackScreen;
+    public GameObject ExclamationMark;
 
     [Header("Shooting")]
     public float FireRate = 1f;
@@ -19,6 +20,8 @@ public class EnemyScript : MonoBehaviour
     private Transform player;
     public bool PlayerIsFreeze;
     private PlayerMovement playerMovement;
+    //private PlayerHealth playerhealth;
+    //private PlayerController playercontroller;
 
 
     void Start()
@@ -44,10 +47,14 @@ public class EnemyScript : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            ExclamationMark.SetActive(true);
             Freeze();
             //Play Shoot Animation after 0.2s
-            //Play Black Screen animation
-            //Kill Player when black screen is full screen
+            Invoke("ShootingAnimation", 0.2f);
+            //Play Black Screen animation after 1 sec
+            Invoke("BlackScreenAnimation", 1f);
+            //Kill Player after 1.5 sec
+            Invoke("DeathPlayer", 1.5f);
             //Respawn Player on previous checkpoint
         }
     }
@@ -55,6 +62,7 @@ public class EnemyScript : MonoBehaviour
     private void Freeze()
     {
         playerMovement.speed = 0;
+        //playercontroller.speed = 0;
     }
 
     private void ShootingAnimation()
@@ -64,7 +72,15 @@ public class EnemyScript : MonoBehaviour
 
     private void BlackScreenAnimation()
     {
-        ScreenAnimation.enabled = true;
+        BlackScreen.SetActive(true);
     }
+
+    private void DeathPlayer()
+    {
+        // Creer script player Health
+       // playerhealth.hp = 0;
+    }
+
+
 }
 
