@@ -32,6 +32,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Vector2 wallJumpForce;
     [SerializeField]
+    private float wrongDirection;
+    [SerializeField]
     private float jumpTime;
     private bool hasWallJumped = false;
 
@@ -80,14 +82,28 @@ public class PlayerController : MonoBehaviour
                     if (leftHitbox)
                     {
                         hasWallJumped = true;
-                        rb.velocity = new Vector2(smoothedMovementInput.x * speed + wallJumpForce.x, wallJumpForce.y);
+                        if (smoothedMovementInput.x < -0.1f)
+                        {
+                            rb.velocity = new Vector2(smoothedMovementInput.x * speed + wallJumpForce.x, wallJumpForce.y - wrongDirection);
+                        }
+                        else
+                        {
+                            rb.velocity = new Vector2(smoothedMovementInput.x * speed + wallJumpForce.x, wallJumpForce.y);
+                        }
                         Invoke("NotWallJumping", jumpTime);
                     }
 
                     else
                     {
                         hasWallJumped = true;
-                        rb.velocity = new Vector2(smoothedMovementInput.x * speed - wallJumpForce.x, wallJumpForce.y);
+                        if (smoothedMovementInput.x > 0.1f)
+                        {
+                            rb.velocity = new Vector2(smoothedMovementInput.x * speed - wallJumpForce.x, wallJumpForce.y - wrongDirection);
+                        }
+                        else
+                        {
+                            rb.velocity = new Vector2(smoothedMovementInput.x * speed - wallJumpForce.x, wallJumpForce.y);
+                        }
                         Invoke("NotWallJumping", jumpTime);
                     }
                 }
