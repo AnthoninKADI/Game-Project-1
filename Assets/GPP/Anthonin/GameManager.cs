@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public List<GameObject> checkpoints;
     public GameObject CurrentCheckpoint;
     public PlayerMovement Player;
+    public EnemyScript enemyScript;
     //public PlayerController Player;
     public float RespawnTime;
     public float BlackScreenAppearAfter;
@@ -26,13 +27,14 @@ public class GameManager : MonoBehaviour
         Freeze(true);
         Invoke("BlackScreenOn", BlackScreenAppearAfter);
         Invoke("Respawn", RespawnTime);
+        Invoke("ExclamationTime", 1.5f);
     }
 
     private void Respawn()
     {
         Player.transform.position = CurrentCheckpoint.transform.position;
         Freeze(false);
-        Invoke("BlackScreenOn", 2f);
+        Invoke("BlackScreenOff", 2f);
     }
 
     private void Freeze(bool freeze)
@@ -49,6 +51,12 @@ public class GameManager : MonoBehaviour
     {
         BlackScreenObject.SetActive(false);
     }
+
+    private void ExclamationTime()
+    {
+        enemyScript.ExclamationMark.SetActive(false);
+    }
+    
 
 
 }
