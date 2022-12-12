@@ -1,19 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Main_menu : MonoBehaviour
+public class Menu : MonoBehaviour
 {
 
+    public string levelToLoad;
 
-    public void PlayGame()
+    public GameObject settingsWindow;
+    public void StartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(levelToLoad);
     }
 
-    public void Quit()
+    public void SettingsButton()
+    {
+        settingsWindow.SetActive(true);
+    }
+
+    public void CloseSettingsWindow()
+    {
+        settingsWindow.SetActive(false);
+    }
+
+    public void QuitGame()
     {
         Application.Quit();
     }
