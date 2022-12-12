@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Menu : MonoBehaviour
+public class Main_menu : MonoBehaviour
 {
 
     public string levelToLoad;
