@@ -27,13 +27,13 @@ public class GameManager : MonoBehaviour
         Freeze(true);
         Invoke("BlackScreenOn", BlackScreenAppearAfter);
         Invoke("Respawn", RespawnTime);
-        Invoke("ExclamationTime", 1.5f);
     }
 
     private void Respawn()
     {
         Player.transform.position = CurrentCheckpoint.transform.position;
         Freeze(false);
+        ExclamationTime();
         Invoke("BlackScreenOff", 2f);
     }
 
@@ -55,7 +55,10 @@ public class GameManager : MonoBehaviour
     private void ExclamationTime()
     {
         enemyScript.ExclamationMark.SetActive(false);
+        Debug.Log("test");
     }
+
+
     
 
 

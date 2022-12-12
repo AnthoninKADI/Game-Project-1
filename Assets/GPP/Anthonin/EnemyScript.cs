@@ -7,7 +7,6 @@ public class EnemyScript : MonoBehaviour
     [Header("Others")]
     public Collider2D EnemySpotCollider;
     public Animator ShootAnimation;
-    public GameObject BlackScreen;
     public GameObject ExclamationMark;
 
     [Header("Shooting")]
@@ -49,19 +48,12 @@ public class EnemyScript : MonoBehaviour
             ExclamationMark.SetActive(true);
             //Play Shoot Animation after 0.2s
             Invoke("ShootingAnimation", 0.2f);
-            //Play Black Screen animation after 1 sec
-            Invoke("BlackScreenAnimation", 1f);
             //Respawn Player on previous checkpoint
         }
     }
     private void ShootingAnimation()
     {
         ShootAnimation.enabled = true;
-    }
-
-    private void BlackScreenAnimation()
-    {
-        BlackScreen.SetActive(true);
     }
 }
 

@@ -5,13 +5,26 @@ using UnityEngine;
 public class VentScript : MonoBehaviour
 {
     [SerializeField]
-    private Animator animator;
-
+    public GameObject VentClose, VentOpen;
+    public BoxCollider2D Collider;
+    private bool IsOpen; 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Electric"))
+
+        if (collision.CompareTag("Electric") && !IsOpen)
         {
-            animator.SetTrigger("Open");
+            IsOpen = true;
+            VentClose.SetActive(false);
+            VentOpen.SetActive(true);
+            Collider.enabled = false;
+        }
+
+        if (IsOpen)
+        {
+            IsOpen = false;
+            VentClose.SetActive(true);
+            VentOpen.SetActive(false);
+            Collider.enabled = true;
         }
     }
 }

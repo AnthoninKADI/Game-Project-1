@@ -28,11 +28,11 @@ Transform:
   m_GameObject: {fileID: 8659201729086064018}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.98, y: 28.091, z: 0}
-  m_LocalScale: {x: 1.8616053, y: 3.16869, z: 4.5267}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8659201729086064016
 SpriteRenderer:
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1ec74da7a251dd4498b92bb66d183533, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 341e0542bb1aebd4a9b7da425d0f51b5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d462c671deeb0ac4f9a5f004a51e7cc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CheckpointActive: {fileID: 21300000, guid: 957bbc412f23efe4b98e5eec66a358d3, type: 3}
+  CheckpointActive: {fileID: 21300000, guid: 73ffb7f16f6b77b47baa2c3d650acf1c, type: 3}
 --- !u!61 &8659201729086064030
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -112,16 +112,16 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.046024323, y: -0.07670975}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 3.69, y: 6.78}
     newSize: {x: 1.28, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3.6080513, y: 5.510391}
   m_EdgeRadius: 0
