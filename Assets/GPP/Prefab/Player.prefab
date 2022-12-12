@@ -46,7 +46,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.47, y: 0.12}
+  m_Offset: {x: 0.5, y: 0.2}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -57,7 +57,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.100000024, y: 0.7}
+  m_Size: {x: 0.100000024, y: 0.5}
   m_EdgeRadius: 0
 --- !u!114 &1506986197
 MonoBehaviour:
@@ -306,7 +306,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.47, y: 0.12}
+  m_Offset: {x: -0.5, y: 0.2}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -317,7 +317,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.100000024, y: 0.7}
+  m_Size: {x: 0.100000024, y: 0.5}
   m_EdgeRadius: 0
 --- !u!114 &1233403588
 MonoBehaviour:
@@ -571,6 +571,7 @@ MonoBehaviour:
   leftHitbox: 0
   rightHitbox: 0
   wallJumpForce: {x: 10, y: 17}
+  wrongDirection: 13
   jumpTime: 0.3
   electric: {fileID: 268028396}
   ElectricityActive: 0
