@@ -10,20 +10,23 @@ public class NewVentSystemScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            if (!IsOpen)
-            {
-                VentOpen.SetActive(false);
-                VentClose.SetActive(true);
-                IsOpen = true;
-            }
-            else if (IsOpen)
-            {
-                VentClose.SetActive(false);
-                VentOpen.SetActive(true);
-                IsOpen = false;
-            }
-        }   
+                if (!IsOpen)
+                {
+                    VentOpen.SetActive(false);
+                    VentClose.SetActive(true);
+                    IsOpen = true;
+                }
+                else if (IsOpen)
+                {
+                    VentClose.SetActive(false);
+                    VentOpen.SetActive(true);
+                    IsOpen = false;
+                }
+        }
     }
+
+    
+
 }
