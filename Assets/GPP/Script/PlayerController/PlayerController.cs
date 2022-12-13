@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour
 
 {
     private Rigidbody2D rb;
-    private Vector3 velocity;
 
     [Header("Movement")]
     public float speed;
@@ -46,11 +45,16 @@ public class PlayerController : MonoBehaviour
     public float interationCooldown = 1f;
     public float interationDuration = 2f;
 
+    //variable temporaire
+
+    private float startSpeed;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         electric.SetActive(false);
         ElectricityActive = false;
+        startSpeed = speed;
     }
     private void FixedUpdate()
     {
@@ -171,6 +175,18 @@ public class PlayerController : MonoBehaviour
         if (isHolding)
         {
             rb.AddForce(new Vector2(0, jumpForceHolding), ForceMode2D.Impulse);
+        }
+    }
+
+    public void SetSpeed(bool IsMoving)     // temporaire
+    {
+        if (IsMoving)
+        {
+            speed = startSpeed;
+        }
+        else
+        {
+            speed = 0f;
         }
     }
 

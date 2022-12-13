@@ -6,12 +6,11 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public List<GameObject> checkpoints;
+    [SerializeField]
+    private List<GameObject> checkpoints;
     public GameObject CurrentCheckpoint;
-    public PlayerMovement Player;
-    public EnemyScript enemyScript;
-    //public PlayerController Player;
-    public float RespawnTime;
+    public PlayerController Player;
+    public float respawnTime;
     public float BlackScreenAppearAfter;
     public GameObject BlackScreenObject;
 
@@ -26,14 +25,13 @@ public class GameManager : MonoBehaviour
     {
         Freeze(true);
         Invoke("BlackScreenOn", BlackScreenAppearAfter);
-        Invoke("Respawn", RespawnTime);
+        Invoke("Respawn", respawnTime);
     }
 
     private void Respawn()
     {
         Player.transform.position = CurrentCheckpoint.transform.position;
         Freeze(false);
-        ExclamationTime();
         Invoke("BlackScreenOff", 2f);
     }
 
@@ -51,15 +49,4 @@ public class GameManager : MonoBehaviour
     {
         BlackScreenObject.SetActive(false);
     }
-
-    private void ExclamationTime()
-    {
-        enemyScript.ExclamationMark.SetActive(false);
-        Debug.Log("test");
-    }
-
-
-    
-
-
 }
