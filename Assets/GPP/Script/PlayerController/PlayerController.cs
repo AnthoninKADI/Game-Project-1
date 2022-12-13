@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded = false;
     private bool isHolding = false;
 
-    [Header("WallJump")]            // public/private a verifier
+    [Header("WallJump")]
     [HideInInspector]
     public bool leftHitbox = false;
     [HideInInspector]
@@ -45,9 +45,7 @@ public class PlayerController : MonoBehaviour
     public float interationCooldown = 1f;
     public float interationDuration = 2f;
 
-    //variable temporaire
-
-    private float startSpeed;
+    private float startSpeed, startJump;
 
     private void Start()
     {
@@ -55,6 +53,7 @@ public class PlayerController : MonoBehaviour
         electric.SetActive(false);
         ElectricityActive = false;
         startSpeed = speed;
+        startJump = jumpForce;
     }
     private void FixedUpdate()
     {
@@ -178,14 +177,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void SetSpeed(bool IsMoving)     // temporaire
+    public void SetVelocity(bool IsMoving)
     {
         if (IsMoving)
         {
+            jumpForce = startJump;
             speed = startSpeed;
         }
         else
         {
+            jumpForce = 0f;
             speed = 0f;
         }
     }
