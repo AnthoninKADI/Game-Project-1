@@ -11,7 +11,7 @@ public class NewVentSystemScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
        
-        if (collision.CompareTag("Electric")) 
+        if (collision.CompareTag("Player") && Input.GetKeyDown(KeyCode.E)) 
         {
             if (!IsOpen)
             {
