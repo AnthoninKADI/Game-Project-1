@@ -114,7 +114,7 @@ Transform:
   m_Children:
   - {fileID: 3447082387438611065}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &7636202300595407740
 PrefabInstance:
@@ -178,6 +178,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 717261435}
   m_SourcePrefab: {fileID: 100100000, guid: 4df463f91094f7943aa745dab26b475a, type: 3}
+--- !u!95 &2818518411943155321 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5684772089920724229, guid: 4df463f91094f7943aa745dab26b475a, type: 3}
+  m_PrefabInstance: {fileID: 7636202300595407740}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2865542931916213322 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5637743217022453558, guid: 4df463f91094f7943aa745dab26b475a, type: 3}
@@ -196,6 +201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightGo: {fileID: 717261434}
+  animator: {fileID: 2818518411943155321}
 --- !u!4 &3447082387438611065 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5057334171300143365, guid: 4df463f91094f7943aa745dab26b475a, type: 3}
