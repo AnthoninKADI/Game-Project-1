@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewVentSystemScript : MonoBehaviour
+public class VentSystem : MonoBehaviour
 {
     public GameObject VentOpen, VentClose;
     public bool IsOpen;
