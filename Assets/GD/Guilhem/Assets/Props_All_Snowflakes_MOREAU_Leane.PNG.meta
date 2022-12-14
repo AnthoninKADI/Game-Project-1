@@ -1,0 +1,280 @@
+fileFormatVersion: 2
+guid: be6bed11bcbd57f45931056d32c27d22
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 400
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Props_All_Snowflakes_MOREAU_Leane_15
+      rect:
+        serializedVersion: 2
+        x: 1457
+        y: 662
+        width: 141
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d44e547aef5c3e46afa043a56856640
+      internalID: -277953236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Props_All_Snowflakes_MOREAU_Leane_24
+      rect:
+        serializedVersion: 2
+        x: 1311
+        y: 570
+        width: 125
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d1dc5ee045bc854c83d977c884fd986
+      internalID: 1231849273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Props_All_Snowflakes_MOREAU_Leane_52
+      rect:
+        serializedVersion: 2
+        x: 1581
+        y: 609
+        width: 25
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3644ea71bb45f364bb46f9838629d1a0
+      internalID: 1419377571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Props_All_Snowflakes_MOREAU_Leane_64
+      rect:
+        serializedVersion: 2
+        x: 1418
+        y: 399
+        width: 189
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61b94640f76061145a8b072dec523884
+      internalID: -1564324122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Props_All_Snowflakes_MOREAU_Leane_53: 1440047786
+      Props_All_Snowflakes_MOREAU_Leane_51: 1898140116
+      Props_All_Snowflakes_MOREAU_Leane_32: 991467134
+      Props_All_Snowflakes_MOREAU_Leane_48: -950077862
+      Props_All_Snowflakes_MOREAU_Leane_70: -1841982562
+      Props_All_Snowflakes_MOREAU_Leane_6: -2127578520
+      Props_All_Snowflakes_MOREAU_Leane_7: -143825164
+      Props_All_Snowflakes_MOREAU_Leane_9: 1733214883
+      Props_All_Snowflakes_MOREAU_Leane_35: 183590681
+      Props_All_Snowflakes_MOREAU_Leane_40: -73216877
+      Props_All_Snowflakes_MOREAU_Leane_30: -709742630
+      Props_All_Snowflakes_MOREAU_Leane_60: 213352815
+      Props_All_Snowflakes_MOREAU_Leane_39: 1687728497
+      Props_All_Snowflakes_MOREAU_Leane_62: -569752922
+      Props_All_Snowflakes_MOREAU_Leane_27: -1452782519
+      Props_All_Snowflakes_MOREAU_Leane_66: -1561630485
+      Props_All_Snowflakes_MOREAU_Leane_42: -1403057979
+      Props_All_Snowflakes_MOREAU_Leane_14: -793740320
+      Props_All_Snowflakes_MOREAU_Leane_46: 572974517
+      Props_All_Snowflakes_MOREAU_Leane_18: -1768781167
+      Props_All_Snowflakes_MOREAU_Leane_22: 245620872
+      Props_All_Snowflakes_MOREAU_Leane_52: 1419377571
+      Props_All_Snowflakes_MOREAU_Leane_65: -1447040754
+      Props_All_Snowflakes_MOREAU_Leane_12: -543886631
+      Props_All_Snowflakes_MOREAU_Leane_71: -1424785602
+      Props_All_Snowflakes_MOREAU_Leane_26: 2028278781
+      Props_All_Snowflakes_MOREAU_Leane_15: -277953236
+      Props_All_Snowflakes_MOREAU_Leane_11: 1534883649
+      Props_All_Snowflakes_MOREAU_Leane_20: 2017837509
+      Props_All_Snowflakes_MOREAU_Leane_59: 662186643
+      Props_All_Snowflakes_MOREAU_Leane_21: 397956589
+      Props_All_Snowflakes_MOREAU_Leane_63: -600180634
+      Props_All_Snowflakes_MOREAU_Leane_45: -1739077840
+      Props_All_Snowflakes_MOREAU_Leane_25: -1103911882
+      Props_All_Snowflakes_MOREAU_Leane_28: 667540769
+      Props_All_Snowflakes_MOREAU_Leane_4: 380624005
+      Props_All_Snowflakes_MOREAU_Leane_68: -711236647
+      Props_All_Snowflakes_MOREAU_Leane_50: -1594878231
+      Props_All_Snowflakes_MOREAU_Leane_34: -578170348
+      Props_All_Snowflakes_MOREAU_Leane_49: 262028839
+      Props_All_Snowflakes_MOREAU_Leane_47: 1577872279
+      Props_All_Snowflakes_MOREAU_Leane_67: 1311594894
+      Props_All_Snowflakes_MOREAU_Leane_57: 87310219
+      Props_All_Snowflakes_MOREAU_Leane_16: -57745247
+      Props_All_Snowflakes_MOREAU_Leane_61: 2135582536
+      Props_All_Snowflakes_MOREAU_Leane_64: -1564324122
+      Props_All_Snowflakes_MOREAU_Leane_36: -2052997647
+      Props_All_Snowflakes_MOREAU_Leane_58: 436644892
+      Props_All_Snowflakes_MOREAU_Leane_0: -941271321
+      Props_All_Snowflakes_MOREAU_Leane_43: 440340479
+      Props_All_Snowflakes_MOREAU_Leane_41: 277990092
+      Props_All_Snowflakes_MOREAU_Leane_69: -1896689100
+      Props_All_Snowflakes_MOREAU_Leane_3: -160484788
+      Props_All_Snowflakes_MOREAU_Leane_1: -1924827606
+      Props_All_Snowflakes_MOREAU_Leane_10: -202289384
+      Props_All_Snowflakes_MOREAU_Leane_13: 724206699
+      Props_All_Snowflakes_MOREAU_Leane_33: -758955982
+      Props_All_Snowflakes_MOREAU_Leane_23: -480541679
+      Props_All_Snowflakes_MOREAU_Leane_56: -964123004
+      Props_All_Snowflakes_MOREAU_Leane_54: 1758549505
+      Props_All_Snowflakes_MOREAU_Leane_19: -542446790
+      Props_All_Snowflakes_MOREAU_Leane_31: 555621633
+      Props_All_Snowflakes_MOREAU_Leane_24: 1231849273
+      Props_All_Snowflakes_MOREAU_Leane_17: -162589305
+      Props_All_Snowflakes_MOREAU_Leane_8: 1629525619
+      Props_All_Snowflakes_MOREAU_Leane_55: 940212704
+      Props_All_Snowflakes_MOREAU_Leane_44: -161772136
+      Props_All_Snowflakes_MOREAU_Leane_5: 503957868
+      Props_All_Snowflakes_MOREAU_Leane_37: 1965394538
+      Props_All_Snowflakes_MOREAU_Leane_29: -1752143351
+      Props_All_Snowflakes_MOREAU_Leane_38: 534869656
+      Props_All_Snowflakes_MOREAU_Leane_2: -1696021758
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
