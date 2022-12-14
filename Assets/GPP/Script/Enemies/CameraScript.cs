@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using TMPro;
 using UnityEngine;
 
 public class CameraScript : MonoBehaviour
@@ -7,6 +9,8 @@ public class CameraScript : MonoBehaviour
     [SerializeField]
     private GameObject lightGo;
     private float respawnTime;
+    [SerializeField]
+    private Animator animator;
 
     public void Start()
     {
@@ -19,6 +23,7 @@ public class CameraScript : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             lightGo.SetActive(true);
+            animator.enabled = false;
             Invoke("LightOff", respawnTime);
         }
     }
@@ -26,5 +31,6 @@ public class CameraScript : MonoBehaviour
     private void LightOff()
     {
         lightGo.SetActive(false);
+        animator.enabled = true;
     }
 }
