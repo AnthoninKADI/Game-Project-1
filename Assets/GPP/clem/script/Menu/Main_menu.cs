@@ -1,12 +1,14 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class Main_menu : MonoBehaviour
 {
 
     public string levelToLoad;
-
     public GameObject settingsWindow;
+    public GameObject settingsFirstButton, settingsClosedButton;
+
     public void StartGame()
     {
         SceneManager.LoadScene(levelToLoad);
@@ -15,11 +17,18 @@ public class Main_menu : MonoBehaviour
     public void SettingsButton()
     {
         settingsWindow.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(settingsFirstButton);
+
     }
 
     public void CloseSettingsWindow()
     {
-        settingsWindow.SetActive(false);
+        if (settingsWindow.activeInHierarchy == true)
+        {
+            settingsWindow.SetActive(false);
+            EventSystem.current.SetSelectedGameObject(settingsClosedButton);
+        }
+        else return;
     }
 
     public void QuitGame()
