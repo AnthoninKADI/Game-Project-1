@@ -22,11 +22,10 @@ public class PlayerController : MonoBehaviour
     public float jumpForceHolding = 0.5f;
     private bool isGrounded = false;
     private bool isHolding = false;
+    public float threshold;
 
     [Header("WallJump")]
-    [HideInInspector]
     public bool leftHitbox = false;
-    [HideInInspector]
     public bool rightHitbox = false;
     [SerializeField]
     private Vector2 wallJumpForce;
@@ -72,7 +71,7 @@ public class PlayerController : MonoBehaviour
         {
             if (!leftHitbox && !rightHitbox)
             {
-                if (rb.velocity.y == 0 && isGrounded)
+                if (Mathf.Abs(rb.velocity.y) < threshold && isGrounded)
                 {
                     isHolding = true;
                     rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
@@ -96,7 +95,7 @@ public class PlayerController : MonoBehaviour
                         Invoke("NotWallJumping", jumpTime);
                     }
 
-                    else
+                    else if (rightHitbox)
                     {
                         hasWallJumped = true;
                         if (smoothedMovementInput.x > 0.1f)
