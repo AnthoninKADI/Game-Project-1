@@ -25,11 +25,11 @@ public class EnemyPatrol : MonoBehaviour
         Vector3 dir = target.position - transform.position;
         transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
 
-        if (Vector3.Distance(transform.position, target.position) < 0.3f)
+        if (Vector3.Distance(transform.position, target.position) < speed)
         {
             destPoint = (destPoint + 1) % waypoints.Length;
             target = waypoints[destPoint];
-            graphics.flipX = !graphics.flipX;
+            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
         }
     }
 
