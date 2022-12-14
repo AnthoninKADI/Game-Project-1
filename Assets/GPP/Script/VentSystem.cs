@@ -11,14 +11,13 @@ public class VentSystem : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
        
-        if (collision.CompareTag("Player") && Input.GetKeyDown(KeyCode.E)) 
+        if (collision.CompareTag("Interact")) 
         {
             if (!IsOpen)
             {
                 IsOpen = true;
                 VentOpen.SetActive(true);
                 VentClose.SetActive(false);
-                Debug.Log("Electric Collision");
             }
             else if(IsOpen)
             {

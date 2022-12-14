@@ -25,7 +25,9 @@ public class PlayerController : MonoBehaviour
     public float threshold;
 
     [Header("WallJump")]
+    [HideInInspector]
     public bool leftHitbox = false;
+    [HideInInspector]
     public bool rightHitbox = false;
     [SerializeField]
     private Vector2 wallJumpForce;
@@ -41,8 +43,12 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public bool ElectricityActive;
     private float lastPressed;
-    public float interationCooldown = 1f;
-    public float interationDuration = 2f;
+    public float electricityCooldown = 1f;
+    public float electricityDuration = 2f;
+
+    [Header("")]
+    [SerializeField]
+    private GameObject interaction;
 
     private float startSpeed, startJump;
 
@@ -50,6 +56,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         electric.SetActive(false);
+        interaction.SetActive(false);
         ElectricityActive = false;
         startSpeed = speed;
         startJump = jumpForce;
@@ -140,19 +147,31 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void Electric(InputAction.CallbackContext context)           // interaction
+    public void Electric(InputAction.CallbackContext context)
     {
-        if (context.started && lastPressed + interationCooldown <= Time.time)
+        if (context.started && lastPressed + electricityCooldown <= Time.time)
         {
             electric.SetActive(true);
             ElectricityActive = true;
-            Invoke("StopElectricity", interationDuration);
+            Invoke("StopElectricity", electricityDuration);
         }
-        else if(Time.time < interationCooldown)
+        else if(Time.time < electricityCooldown)
         {
             electric.SetActive(true);
             ElectricityActive = false;
-            Invoke("StopElectricity", interationDuration);
+            Invoke("StopElectricity", electricityDuration);
+        }
+    }
+
+    public void Interaction(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            interaction.SetActive(true);
+        }
+        if (context.canceled || context.performed)
+        {
+            interaction.SetActive(false);
         }
     }
 
