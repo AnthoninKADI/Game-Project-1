@@ -6,12 +6,16 @@ using UnityEngine.InputSystem;
 
 public class Elevator : MonoBehaviour
 {
+    
+
     [SerializeField]
     private Transform downPose;
     [SerializeField]
     private Transform upPose;
     [SerializeField]
-    private SpriteRenderer elevator;
+    private Transform elevatorswitch;
+    [SerializeField]
+    private GameObject elevatorSwitchLightUp;
 
     [SerializeField]
     private float speed;
@@ -61,11 +65,11 @@ public class Elevator : MonoBehaviour
         if(transform.position.y <= downPose.position.y || transform.position.y >= upPose.position.y)
 
         {
-            elevator.color = Color.green;
+            elevatorSwitchLightUp.SetActive(false);
         }
         else
         {
-            elevator.color = Color.red;
+            elevatorSwitchLightUp.SetActive(true);
         }
     }
 
