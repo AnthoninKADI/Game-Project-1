@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnigmaScript : MonoBehaviour
 {
-    //public GameObject Plan;
     public static int totalPlans, currentCount;
 
     private void Awake()
@@ -20,7 +19,7 @@ public class EnigmaScript : MonoBehaviour
             currentCount++;
             if (currentCount == totalPlans)
             {
-                Debug.Log("HOURRA");
+                //add Transition new scene
             }
             Destroy(gameObject);
         }
