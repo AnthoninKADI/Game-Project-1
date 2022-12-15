@@ -52,6 +52,12 @@ public class PlayerController : MonoBehaviour
 
     private float startSpeed, startJump;
 
+    [Header("Pause")]
+    [SerializeField]
+    private GameObject pauseMenu;
+    [HideInInspector]
+    public bool gameIsPaused = false;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -173,6 +179,23 @@ public class PlayerController : MonoBehaviour
         {
             interaction.SetActive(false);
         }
+    }
+
+    public void Pause(InputAction.CallbackContext context)
+    {
+        if (!gameIsPaused)
+        {
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0;
+            gameIsPaused = true;
+        }
+        else if(gameIsPaused)
+        {
+            pauseMenu.SetActive(false);
+            Time.timeScale = 1;
+            gameIsPaused = false;
+        }
+        
     }
 
     private void StopElectricity()
