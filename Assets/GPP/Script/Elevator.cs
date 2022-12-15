@@ -6,12 +6,14 @@ using UnityEngine.InputSystem;
 
 public class Elevator : MonoBehaviour
 {
+    
+
     [SerializeField]
     private Transform downPose;
     [SerializeField]
     private Transform upPose;
     [SerializeField]
-    private SpriteRenderer elevator;
+    private Transform elevatorswitch;
 
     [SerializeField]
     private float speed;
@@ -29,7 +31,7 @@ public class Elevator : MonoBehaviour
     void Update()
     {
         ElevatorMovement();
-        DisplayColor();
+        //DisplayColor();
     }
 
     public void StartElevator()
@@ -56,7 +58,7 @@ public class Elevator : MonoBehaviour
         }
     }
 
-    private void DisplayColor()
+   /* private void DisplayColor()
     {
         if(transform.position.y <= downPose.position.y || transform.position.y >= upPose.position.y)
 
@@ -67,7 +69,7 @@ public class Elevator : MonoBehaviour
         {
             elevator.color = Color.red;
         }
-    }
+    }*/
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
