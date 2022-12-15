@@ -14,6 +14,8 @@ public class Elevator : MonoBehaviour
     private Transform upPose;
     [SerializeField]
     private Transform elevatorswitch;
+    [SerializeField]
+    private GameObject elevatorSwitchLightUp;
 
     [SerializeField]
     private float speed;
@@ -31,7 +33,7 @@ public class Elevator : MonoBehaviour
     void Update()
     {
         ElevatorMovement();
-        //DisplayColor();
+        DisplayColor();
     }
 
     public void StartElevator()
@@ -58,18 +60,18 @@ public class Elevator : MonoBehaviour
         }
     }
 
-   /* private void DisplayColor()
+    private void DisplayColor()
     {
         if(transform.position.y <= downPose.position.y || transform.position.y >= upPose.position.y)
 
         {
-            elevator.color = Color.green;
+            elevatorSwitchLightUp.SetActive(false);
         }
         else
         {
-            elevator.color = Color.red;
+            elevatorSwitchLightUp.SetActive(true);
         }
-    }*/
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
