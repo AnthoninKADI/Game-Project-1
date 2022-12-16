@@ -9,10 +9,14 @@ public class PlayerController : MonoBehaviour
 
 {
     private Rigidbody2D rb;
+    private SpriteRenderer _renderer;
+    [SerializeField]
+    private PlayerAnimation _playerAnimation;
 
     [Header("Movement")]
     public float speed;
-    private Vector2 movementInput;
+    [HideInInspector]
+    public Vector2 movementInput;
     private Vector2 smoothedMovementInput;
     private Vector2 movementInputSmoothVelocity;
     public float smoothTime = 0.1f;
@@ -60,6 +64,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        _renderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         electric.SetActive(false);
         interaction.SetActive(false);
@@ -151,6 +156,18 @@ public class PlayerController : MonoBehaviour
                 rb.velocity = new Vector2(smoothedMovementInput.x * speed, rb.velocity.y);
             }
         }
+
+
+        if (movementInput.x > 0)
+        {
+            _renderer.flipX = false;
+        }
+        else if (movementInput.x < 0)
+        {
+            _renderer.flipX = true;
+        }
+
+        _playerAnimation.Walking();
     }
 
     public void Electric(InputAction.CallbackContext context)
