@@ -16,8 +16,8 @@ public class TeleporterScript : MonoBehaviour
     [SerializeField]
     private float tpCooldown;
 
-
-    public SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer1;
+    public SpriteRenderer spriteRenderer2;
     [SerializeField]
     private Sprite tp;
     [SerializeField]
@@ -31,7 +31,9 @@ public class TeleporterScript : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player");
         inputTime = Time.time;
-        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        spriteRenderer1 = tp1.GetComponent<SpriteRenderer>();
+        spriteRenderer2 = tp2.GetComponent<SpriteRenderer>();
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -45,7 +47,8 @@ public class TeleporterScript : MonoBehaviour
                 {
                     inputTime = Time.time;
                     isActive = false;
-                    spriteRenderer.sprite = tpTaken;
+                    spriteRenderer1.sprite = tpTaken;
+                    spriteRenderer2.sprite = tpTaken;
                     Invoke("ChangeSprite", tpCooldown);
                     player.transform.position = new Vector2(tp1.transform.position.x, tp1.transform.position.y);
                 }
@@ -53,7 +56,8 @@ public class TeleporterScript : MonoBehaviour
                 {
                     isActive = false;
                     inputTime = Time.time;
-                    spriteRenderer.sprite = tpTaken;
+                    spriteRenderer1.sprite = tpTaken;
+                    spriteRenderer2.sprite = tpTaken;
                     Invoke("ChangeSprite", tpCooldown);
                     player.transform.position = new Vector2(tp2.transform.position.x, tp2.transform.position.y);
                 }
@@ -64,6 +68,7 @@ public class TeleporterScript : MonoBehaviour
     private void ChangeSprite()
     {
         isActive = true;
-        spriteRenderer.sprite = tp;
+        spriteRenderer1.sprite = tp;
+        spriteRenderer2.sprite = tp;
     }
 }

@@ -45,6 +45,10 @@ PrefabInstance:
       propertyPath: tp1
       value: 
       objectReference: {fileID: 5671979632071283967}
+    - target: {fileID: 632985386833307679, guid: 075cde42f83d49642a4fbfcd0b320d67, type: 3}
+      propertyPath: spriteRenderer1
+      value: 
+      objectReference: {fileID: 5641366794247004584}
     - target: {fileID: 6246726119878792153, guid: 075cde42f83d49642a4fbfcd0b320d67, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -99,6 +103,11 @@ PrefabInstance:
 --- !u!4 &7135363487388235802 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6246726119878792153, guid: 075cde42f83d49642a4fbfcd0b320d67, type: 3}
+  m_PrefabInstance: {fileID: 3870055556758039491}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &7135363487388235803 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6246726119878792152, guid: 075cde42f83d49642a4fbfcd0b320d67, type: 3}
   m_PrefabInstance: {fileID: 3870055556758039491}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &7135363487388235806 stripped
@@ -196,7 +205,8 @@ MonoBehaviour:
   tp2: {fileID: 7135363487388235806}
   secondTp: 0
   tpCooldown: 2
-  spriteRenderer: {fileID: 5641366794247004584}
+  spriteRenderer1: {fileID: 5641366794247004584}
+  spriteRenderer2: {fileID: 7135363487388235803}
   tp: {fileID: 21300000, guid: b14361854c389b049a754fc44eae9742, type: 3}
   tpTaken: {fileID: 21300000, guid: 8a7ba4692404d5146a19975baea432f0, type: 3}
 --- !u!4 &6222125273526085178 stripped
