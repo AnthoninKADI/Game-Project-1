@@ -167,7 +167,7 @@ public class PlayerController : MonoBehaviour
             _renderer.flipX = true;
         }
 
-        _playerAnimation.Walking();
+        _playerAnimation.Running();
     }
 
     public void Electric(InputAction.CallbackContext context)

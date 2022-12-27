@@ -9,15 +9,15 @@ public class PlayerAnimation : MonoBehaviour
     [SerializeField]
     private PlayerController _playerController;
 
-    public void Walking()
+    public void Running()
     {
         if (_playerController.movementInput.x != 0)
         {
-            _animator.SetBool("IsWalking", true);
+            _animator.SetBool("IsRunning", true);
         }
         else
         {
-            _animator.SetBool("IsWalking", false);
+            _animator.SetBool("IsRunning", false);
         }
     }
 }
