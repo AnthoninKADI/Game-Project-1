@@ -184,6 +184,7 @@ public class PlayerController : MonoBehaviour
             ElectricityActive = false;
             Invoke("StopElectricity", electricityDuration);
         }
+        _playerAnimation.Attack();
     }
 
     public void Interaction(InputAction.CallbackContext context)
@@ -211,8 +212,7 @@ public class PlayerController : MonoBehaviour
             pauseMenu.SetActive(false);
             Time.timeScale = 1;
             gameIsPaused = false;
-        }
-        
+        }        
     }
 
     private void StopElectricity()
