@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Enviro_Bunker_Tiles_Sol_MATON_Iris_02
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 21300000, guid: 3c88fe0bc92e0c8458382ab891980386, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7058824, g: 0.7058824, b: 0.7058824, a: 1}
   m_Transform:
     e00: 1
     e01: 0
