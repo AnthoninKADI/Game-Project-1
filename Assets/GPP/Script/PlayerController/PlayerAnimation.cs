@@ -9,6 +9,13 @@ public class PlayerAnimation : MonoBehaviour
     [SerializeField]
     private PlayerController _playerController;
 
+
+    private void FixedUpdate()
+    {
+        Falling();
+        Landing();
+    }
+
     public void Running()
     {
         if (_playerController.movementInput.x != 0)
@@ -21,58 +28,61 @@ public class PlayerAnimation : MonoBehaviour
         }
     }
 
-    public void Attack()
+    public void AttackON()
     {
-        if (_playerController.movementInput.x != 0 && _playerController.ElectricityActive)
+        if (_playerController.movementInput.x != 0)
         {
             _animator.SetBool("IsRunAttacking", true);
         }
-        else if (_playerController.movementInput.x == 0 && _playerController.ElectricityActive)
+        else if (_playerController.movementInput.x == 0)
         {
             _animator.SetBool("IsIdleAttacking", true);
         }
-        else
+    }
+
+    public void AttackOFF()
+    {
+        _animator.SetBool("IsRunAttacking", false);
+        _animator.SetBool("IsIdleAttacking", false);
+    }
+
+    public void Jumping()
+    {
+        _animator.SetBool("IsJumping", true);
+        _animator.SetBool("IsLanded", false);
+    }
+
+    public void Falling()
+    {
+        if (_animator.GetBool("IsJumping"))
         {
-            _animator.SetBool("IsRunAttacking", false);
-            _animator.SetBool("IsIdleAttacking", false);
+            if (_playerController.rb.velocity.y < 0)
+            {
+                _animator.SetBool("IsJumping", false);
+                _animator.SetBool("IsFalling", true);
+            }
         }
     }
 
-    //public void Jumping()
-    //{
-    //    if (_playerController.isHolding)
-    //    {
-    //        _animator.SetBool("IsJumping", true);
-    //    }
-    //    else
-    //    {
-    //        _animator.SetBool("IsJumping", false);
-    //    }
-    //}
+    public void Landing()
+    {
+        if(_playerController.isGrounded)
+        {   
+            if (_animator.GetBool("IsFalling"))
+            {
+                _animator.SetBool("IsFalling", false);
+                _animator.SetBool("IsLanded", true);
+            }
+        }
+    }
 
-    //public void FallingLanding()
-    //{
-    //    if (_playerController.isGrounded)
-    //    {
-    //        _animator.SetBool("IsFalling", false);
-    //        _animator.SetBool("IsLanded", true);
-    //    }
-    //    else
-    //    {
-    //        _animator.SetBool("IsFalling", true);
-    //        _animator.SetBool("IsLanded", false);
-    //    }
-    //}
-
-    //public void WallJumping()
-    //{
-    //    if (_playerController.hasWallJumped)
-    //    {
-    //        _animator.SetBool("IsOnWall", true);
-    //    }
-    //    else
-    //    {
-    //        _animator.SetBool("IsOnWall", false);
-    //    }
-    //}
+    public void WallJumpingON()
+    {
+        _animator.SetBool("IsOnWall", true);
+        //_playerController.hasWallJumped
+    }
+    public void WallJumpingOFF()
+    {
+        _animator.SetBool("IsOnWall", false);
+    }
 }

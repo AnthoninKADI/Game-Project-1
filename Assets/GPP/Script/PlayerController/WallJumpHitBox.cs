@@ -5,6 +5,8 @@ using UnityEngine;
 public class WallJumpHitBox : MonoBehaviour
 {
     [SerializeField]
+    private PlayerAnimation _playerAnimation;
+    [SerializeField]
     PlayerController playerController;
     [SerializeField]
     Rigidbody2D rb;
@@ -33,6 +35,7 @@ public class WallJumpHitBox : MonoBehaviour
             }
             rb.velocity = Vector2.zero;
             rb.isKinematic = true;
+            _playerAnimation.WallJumpingON();
             Invoke("PlayerFalling", timeToFall);
         }
     }
@@ -49,6 +52,7 @@ public class WallJumpHitBox : MonoBehaviour
                 playerController.leftHitbox = false;
             }
             rb.isKinematic = false;
+            _playerAnimation.WallJumpingOFF();
             CancelInvoke();
         }
     }

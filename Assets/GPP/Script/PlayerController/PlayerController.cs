@@ -8,7 +8,8 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 
 {
-    private Rigidbody2D rb;
+    [HideInInspector]
+    public Rigidbody2D rb;
     private SpriteRenderer _renderer;
     [SerializeField]
     private PlayerAnimation _playerAnimation;
@@ -24,7 +25,7 @@ public class PlayerController : MonoBehaviour
     [Header("Jump")]
     public float jumpForce = 2f;
     public float jumpForceHolding = 0.5f;
-    private bool isGrounded = false;
+    public bool isGrounded = false;
     private bool isHolding = false;
     public float threshold;
 
@@ -92,7 +93,9 @@ public class PlayerController : MonoBehaviour
                 if (Mathf.Abs(rb.velocity.y) < threshold && isGrounded)
                 {
                     isHolding = true;
+                    isGrounded = false;
                     rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+                    _playerAnimation.Jumping();
                 }
             }
             else
@@ -174,6 +177,7 @@ public class PlayerController : MonoBehaviour
     {
         if (context.started && lastPressed + electricityCooldown <= Time.time)
         {
+            _playerAnimation.AttackON();
             electric.SetActive(true);
             ElectricityActive = true;
             Invoke("StopElectricity", electricityDuration);
@@ -184,7 +188,6 @@ public class PlayerController : MonoBehaviour
             ElectricityActive = false;
             Invoke("StopElectricity", electricityDuration);
         }
-        _playerAnimation.Attack();
     }
 
     public void Interaction(InputAction.CallbackContext context)
