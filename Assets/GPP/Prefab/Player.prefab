@@ -72,7 +72,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerAnimation: {fileID: 100088489}
-  playerController: {fileID: 5530521355126855769}
+  _playerController: {fileID: 5530521355126855769}
   rb: {fileID: 5530521355126855771}
   timeToFall: 1
   right: 1
@@ -367,7 +367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerAnimation: {fileID: 100088489}
-  playerController: {fileID: 5530521355126855769}
+  _playerController: {fileID: 5530521355126855769}
   rb: {fileID: 5530521355126855771}
   timeToFall: 1
   right: 0

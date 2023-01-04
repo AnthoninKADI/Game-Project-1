@@ -7,7 +7,7 @@ public class WallJumpHitBox : MonoBehaviour
     [SerializeField]
     private PlayerAnimation _playerAnimation;
     [SerializeField]
-    PlayerController playerController;
+    PlayerController _playerController;
     [SerializeField]
     Rigidbody2D rb;
     private float gravityScale;
@@ -23,15 +23,15 @@ public class WallJumpHitBox : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Wall"))
+        if (collision.gameObject.CompareTag("Wall") && !_playerController.isGrounded)
         {
             if (right)
             {
-                playerController.rightHitbox = true;
+                _playerController.rightHitbox = true;
             }
             else
             {
-                playerController.leftHitbox = true;
+                _playerController.leftHitbox = true;
             }
             rb.velocity = Vector2.zero;
             rb.isKinematic = true;
@@ -45,11 +45,11 @@ public class WallJumpHitBox : MonoBehaviour
         {
             if (right)
             {
-                playerController.rightHitbox = false;
+                _playerController.rightHitbox = false;
             }
             else
             {
-                playerController.leftHitbox = false;
+                _playerController.leftHitbox = false;
             }
             rb.isKinematic = false;
             _playerAnimation.WallJumpingOFF();
@@ -61,12 +61,13 @@ public class WallJumpHitBox : MonoBehaviour
     {
         if (right)
         {
-            playerController.rightHitbox = false;
+            _playerController.rightHitbox = false;
         }
         else
         {
-            playerController.leftHitbox = false;
+            _playerController.leftHitbox = false;
         }
         rb.isKinematic = false;
+        _playerAnimation.WallJumpingOFF();
     }
 }
