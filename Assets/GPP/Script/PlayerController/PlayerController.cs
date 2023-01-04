@@ -102,7 +102,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (!hasWallJumped)
                 {
-                    if (leftHitbox)
+                    if (leftHitbox && !isGrounded)
                     {
                         hasWallJumped = true;
                         if (smoothedMovementInput.x < -0.1f)
@@ -116,7 +116,7 @@ public class PlayerController : MonoBehaviour
                         Invoke("NotWallJumping", jumpTime);
                     }
 
-                    else if (rightHitbox)
+                    else if (rightHitbox && !isGrounded)
                     {
                         hasWallJumped = true;
                         if (smoothedMovementInput.x > 0.1f)
