@@ -163,11 +163,17 @@ public class PlayerController : MonoBehaviour
 
         if (movementInput.x > 0)
         {
-            _renderer.flipX = false;
+            if(!rightHitbox && !leftHitbox)
+            {
+                _renderer.flipX = false;
+            }
         }
         else if (movementInput.x < 0)
         {
-            _renderer.flipX = true;
+            if(!rightHitbox && !leftHitbox)
+            {
+                _renderer.flipX = true;
+            }
         }
 
         _playerAnimation.Running();

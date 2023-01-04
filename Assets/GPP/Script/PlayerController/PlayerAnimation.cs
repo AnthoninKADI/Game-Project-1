@@ -67,11 +67,11 @@ public class PlayerAnimation : MonoBehaviour
     public void Landing()
     {
         if(_playerController.isGrounded)
-        {   
+        {
+            _animator.SetBool("IsLanded", true);
             if (_animator.GetBool("IsFalling"))
             {
                 _animator.SetBool("IsFalling", false);
-                _animator.SetBool("IsLanded", true);
             }
         }
     }
@@ -79,6 +79,7 @@ public class PlayerAnimation : MonoBehaviour
     public void WallJumpingON()
     {
         _animator.SetBool("IsOnWall", true);
+        _animator.SetBool("IsFalling", false);
         //_playerController.hasWallJumped
     }
     public void WallJumpingOFF()
