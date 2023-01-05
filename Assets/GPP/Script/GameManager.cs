@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
 
     private void Freeze(bool freeze)
     {
-        Player.SetVelocity(!freeze);
+        Player.SetVelocity(!freeze); 
     }
 
     private void BlackScreenOn()

@@ -28,7 +28,8 @@ public class EnemyScript : MonoBehaviour
             ExclamationMark.SetActive(true);
             Invoke("ExclamationTime", respawnTime);
             Invoke("ShootingAnimation", 0.2f);
-            Invoke("ShootingAnimationOff", respawnTime);
+            
+            Invoke("ShootingAnimationOff", respawnTime+1);
             //Play Shoot Animation after 0.2s
             
             //Respawn Player on previous checkpoint
@@ -42,11 +43,12 @@ public class EnemyScript : MonoBehaviour
     private void ShootingAnimation()
     {
         ShootAnimation.SetBool("IsShooting", true);
+        GetComponent<EnemyPatrol>().enabled = false;
     }
     private void ShootingAnimationOff()
     {
         ShootAnimation.SetBool("IsShooting", false);
-
+        GetComponent<EnemyPatrol>().enabled = true;
     }
 
     private void ExclamationTime()
