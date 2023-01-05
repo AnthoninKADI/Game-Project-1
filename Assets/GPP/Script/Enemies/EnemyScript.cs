@@ -33,10 +33,6 @@ public class EnemyScript : MonoBehaviour
             
             //Respawn Player on previous checkpoint
         }
-        if (collision.CompareTag("Electric"))
-        {
-            ShootAnimation.SetBool("IsDead", true);
-        }
     }
 
     private void ShootingAnimation()
