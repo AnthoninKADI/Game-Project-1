@@ -35,7 +35,7 @@ public class EnemyScript : MonoBehaviour
         }
         if (collision.CompareTag("Electric"))
         {
-            Destroy(gameObject);
+            ShootAnimation.SetBool("IsDead", true);
         }
     }
 
