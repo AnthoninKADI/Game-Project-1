@@ -1,76 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2685940023182820186
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 661069664617529004}
-  - component: {fileID: 4205767620253369137}
-  - component: {fileID: 7706444026833120463}
-  m_Layer: 0
-  m_Name: ElectricDetection
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &661069664617529004
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2685940023182820186}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 532811008150785288}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &4205767620253369137
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2685940023182820186}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.9801031, y: 0.03129947}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.04, y: 3.58}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.8382176, y: 3.6228225}
-  m_EdgeRadius: 0
---- !u!114 &7706444026833120463
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2685940023182820186}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d906623f40ceb74b971f39e3e7f6440, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6807430652887998497
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,7 +160,6 @@ GameObject:
   - component: {fileID: 6807430653977631945}
   - component: {fileID: 6807430653977631944}
   - component: {fileID: 6807430653977631947}
-  - component: {fileID: 8516751824533110884}
   m_Layer: 0
   m_Name: Triangle
   m_TagString: ZoneDMG
@@ -335,22 +263,6 @@ PolygonCollider2D:
       - {x: -0.47313204, y: -0.22508387}
       - {x: 0.46968058, y: -0.2229988}
   m_UseDelaunayMesh: 0
---- !u!114 &8516751824533110884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6807430653977631958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 571e99500ddd3fd43ba8ac4c441b749b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EnemySpotCollider: {fileID: 0}
-  KillEnemyCollider: {fileID: 0}
-  ShootAnimation: {fileID: 6807430653026848851}
-  ExclamationMark: {fileID: 6807430653377128810}
 --- !u!1 &6807430654282302306
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,7 +420,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6421067459152097360, guid: cdc2a222ef466f044b44b0e0fe7db94a, type: 3}
-    - {fileID: 6421067459152097374, guid: cdc2a222ef466f044b44b0e0fe7db94a, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6421067459152097372, guid: cdc2a222ef466f044b44b0e0fe7db94a, type: 3}
       insertIndex: -1
@@ -516,15 +427,42 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6421067459152097372, guid: cdc2a222ef466f044b44b0e0fe7db94a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6807430653377128813}
-    - targetCorrespondingSourceObject: {fileID: 6421067459152097372, guid: cdc2a222ef466f044b44b0e0fe7db94a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 661069664617529004}
   m_SourcePrefab: {fileID: 100100000, guid: cdc2a222ef466f044b44b0e0fe7db94a, type: 3}
 --- !u!1 &532811008150785287 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6421067459152097363, guid: cdc2a222ef466f044b44b0e0fe7db94a, type: 3}
   m_PrefabInstance: {fileID: 6807430652924427604}
   m_PrefabAsset: {fileID: 0}
+--- !u!60 &4103058456977692561
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532811008150785287}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.04, y: 3.58}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 8.088643, y: 1.750334}
+      - {x: 7.411047, y: -1.5529264}
+      - {x: 0.13398612, y: 1.448794}
+      - {x: 0.19067827, y: 1.4303399}
+  m_UseDelaunayMesh: 0
 --- !u!61 &6807430653026848860
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -589,9 +527,30 @@ MonoBehaviour:
   - {fileID: 6807430654282302309}
   - {fileID: 6807430652887998496}
   graphics: {fileID: 532811008150785291}
+--- !u!114 &6807430653026848858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532811008150785287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 571e99500ddd3fd43ba8ac4c441b749b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemySpotCollider: {fileID: 4103058456977692561}
+  KillEnemyCollider: {fileID: 532811008150785290}
+  ShootAnimation: {fileID: 6807430653026848851}
+  ExclamationMark: {fileID: 6807430653377128810}
 --- !u!4 &532811008150785288 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6421067459152097372, guid: cdc2a222ef466f044b44b0e0fe7db94a, type: 3}
+  m_PrefabInstance: {fileID: 6807430652924427604}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &532811008150785290 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 6421067459152097374, guid: cdc2a222ef466f044b44b0e0fe7db94a, type: 3}
   m_PrefabInstance: {fileID: 6807430652924427604}
   m_PrefabAsset: {fileID: 0}
 --- !u!212 &532811008150785291 stripped
