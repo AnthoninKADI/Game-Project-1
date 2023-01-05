@@ -6,7 +6,7 @@ using UnityEngine.Rendering.Universal;
 public class DocumentScript : MonoBehaviour
 {
     public Sprite On;
-    private door doorDocument;
+    private DoorDocument doorDocument;
     public GameObject lights;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -20,8 +20,8 @@ public class DocumentScript : MonoBehaviour
         }
     }
 
-    public void SetDoor(door d)
+    public void SetDoorDocument(DoorDocument y)
     {
-        doorDocument = d;
+        doorDocument = y;
     }
 }
