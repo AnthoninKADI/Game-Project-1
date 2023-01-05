@@ -8,16 +8,14 @@ public class SwitchScript : MonoBehaviour
 {
     public Sprite On;
     private door door;
-    public GameObject lights;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (collision.CompareTag("Interact"))
+        if (collision.CompareTag("Electric"))
         {
             GetComponent<SpriteRenderer>().sprite = On;
             door.CountSwitch();
-            lights.GetComponent<Light2D>().intensity = 0;
         }
     }
 
