@@ -13,7 +13,6 @@ public class DocumentScript : MonoBehaviour
     public bool transition;
     public GameObject mission2Briefing;
     public GameObject nextMissionButton;
-    public string levelToLoad;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -25,6 +24,7 @@ public class DocumentScript : MonoBehaviour
             doorDocument.CountSwitch();
             if (transition)
             {
+                Debug.Log("Nique ta mere");
                 mission2Briefing.SetActive(true);
                 EventSystem.current.SetSelectedGameObject(nextMissionButton);
             }
@@ -34,10 +34,5 @@ public class DocumentScript : MonoBehaviour
     public void SetDoorDocument(DoorDocument y)
     {
         doorDocument = y;
-    }
-
-    public void GoLevel2()
-    {
-        SceneManager.LoadScene(levelToLoad);
     }
 }
