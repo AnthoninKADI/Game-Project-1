@@ -9,6 +9,13 @@ public class Main_menu : MonoBehaviour
     public GameObject settingsWindow;
     public GameObject settingsFirstButton, settingsClosedButton;
 
+    public GameObject missionBriefing;
+
+    public void PressStart()
+    {
+        missionBriefing.SetActive(true);
+    }
+
     public void StartGame()
     {
         SceneManager.LoadScene(levelToLoad);
