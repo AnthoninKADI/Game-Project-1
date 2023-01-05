@@ -7,13 +7,14 @@ public class Main_menu : MonoBehaviour
 
     public string levelToLoad;
     public GameObject settingsWindow;
-    public GameObject settingsFirstButton, settingsClosedButton;
+    public GameObject settingsFirstButton, settingsClosedButton ,nextButton;
 
     public GameObject missionBriefing;
 
     public void PressStart()
     {
         missionBriefing.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(nextButton);
     }
 
     public void StartGame()

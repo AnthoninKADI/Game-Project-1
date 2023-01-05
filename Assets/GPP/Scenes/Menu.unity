@@ -371,7 +371,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 792, y: -477}
+  m_AnchoredPosition: {x: 794, y: -426}
   m_SizeDelta: {x: 318.511, y: 66.3086}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &74873146
@@ -390,7 +390,7 @@ MonoBehaviour:
     m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 161695672}
+    m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -398,7 +398,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
     m_HighlightedColor: {r: 0.93333334, g: 0.81960785, b: 0.4, a: 0.05882353}
     m_PressedColor: {r: 0.93333334, g: 0.81960785, b: 0.4, a: 0.105882354}
-    m_SelectedColor: {r: 1, g: 1, b: 1, a: 0}
+    m_SelectedColor: {r: 0.7372549, g: 0.6431373, b: 0.29411766, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1543,6 +1543,7 @@ MonoBehaviour:
   settingsWindow: {fileID: 1680736743}
   settingsFirstButton: {fileID: 1452143689}
   settingsClosedButton: {fileID: 1399872360}
+  nextButton: {fileID: 74873144}
   missionBriefing: {fileID: 1457404146}
 --- !u!95 &605214742
 Animator:
@@ -2946,7 +2947,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1457404147
 RectTransform:
   m_ObjectHideFlags: 0
