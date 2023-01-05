@@ -15,8 +15,8 @@ public class DocumentScript : MonoBehaviour
         if (collision.CompareTag("Interact"))
         {
             GetComponent<SpriteRenderer>().sprite = On;
-            doorDocument.CountSwitch();
             lights.GetComponent<Light2D>().intensity = 0;
+            doorDocument.CountSwitch();
         }
     }
 

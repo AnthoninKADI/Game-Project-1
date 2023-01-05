@@ -3043,8 +3043,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 287.92773, y: 21.7868}
-  m_SizeDelta: {x: 1228.1392, y: 722.2588}
+  m_AnchoredPosition: {x: 304, y: -0.000022888}
+  m_SizeDelta: {x: 1273.4424, y: 748.9014}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1469295335
 MonoBehaviour:
@@ -3086,17 +3086,29 @@ MonoBehaviour:
     are sent in europe. Local rebels will bring you to an enemy secret base far into
 
     occupied
-    territory.'
+    territory.
+
+
+    Your mission is to infiltrate the base and gather as much intel
+    as possible on Enigma''s whereabouts.
+
+
+    You will have to be as steelthy as
+    possible and not getting detected.
+
+
+    Rescuing you is not an option nor is
+    it a possibility..'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4f6c503711c48f34aa9c04e170625b62, type: 2}
+  m_sharedMaterial: {fileID: -3799067940737426084, guid: 4f6c503711c48f34aa9c04e170625b62, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 3036676095
-  m_fontColor: {r: 1, g: 1, b: 1, a: 0.7058824}
+    rgba: 3741319167
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0.87058824}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3113,8 +3125,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 29
+  m_fontSizeBase: 29
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3149,7 +3161,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -57.466858, y: 0, z: -13.261353, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3387,7 +3399,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 276.6693, y: 419.9881}
+  m_AnchoredPosition: {x: 281.7, y: 358}
   m_SizeDelta: {x: 1250.6562, y: 74.153}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1553720389
@@ -3412,15 +3424,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: MISSION BRIEFING
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d38c700b4269c454da9a5340797798e8, type: 2}
+  m_sharedMaterial: {fileID: -5181552475228550011, guid: d38c700b4269c454da9a5340797798e8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 3036676095
-  m_fontColor: {r: 1, g: 1, b: 1, a: 0.7058824}
+    rgba: 2244791500
+  m_fontColor: {r: 0.8018868, g: 0.8018868, b: 0.8018868, a: 0.52156866}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3437,8 +3449,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 90
+  m_fontSizeBase: 90
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
