@@ -1019,8 +1019,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Next
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4f6c503711c48f34aa9c04e170625b62, type: 2}
+  m_sharedMaterial: {fileID: -3799067940737426084, guid: 4f6c503711c48f34aa9c04e170625b62, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1842,7 +1842,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 742, y: 334}
+  m_AnchoredPosition: {x: 742, y: 366}
   m_SizeDelta: {x: 55, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &951287549
@@ -3044,8 +3044,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 304, y: -0.000022888}
-  m_SizeDelta: {x: 1273.4424, y: 748.9014}
+  m_AnchoredPosition: {x: 294.33984, y: -0.000030517578}
+  m_SizeDelta: {x: 1246.1221, y: 748.9014}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1469295335
 MonoBehaviour:
@@ -3076,30 +3076,30 @@ MonoBehaviour:
     Our intelligence discovered that a U-Boat
     submarine would soon leave its harbor
 
-    with a enigma machine on board.
+    with an Enigma machine on board.
 
 
     We
-    need this machine to understand and break axis''s crypted communications.
+    need this machine to understand and break cryptic communications of the Axis.
 
 
     You
-    are sent in europe. Local rebels will bring you to an enemy secret base far into
+    are sent in Europe. Local rebels will bring you to an enemy secret base far into
 
     occupied
     territory.
 
 
     Your mission is to infiltrate the base and gather as much intel
-    as possible on Enigma''s whereabouts.
+    as possible on Enigmas whereabouts.
 
 
     You will have to be as steelthy as
-    possible and not getting detected.
+    possible and not get detected.
 
 
-    Rescuing you is not an option nor is
-    it a possibility..'
+    Rescuing you is not an option nor is it
+    a possibility..'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4f6c503711c48f34aa9c04e170625b62, type: 2}
   m_sharedMaterial: {fileID: -3799067940737426084, guid: 4f6c503711c48f34aa9c04e170625b62, type: 2}
@@ -3821,7 +3821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AspectMode: 0
-  m_AspectRatio: 1.8195146
+  m_AspectRatio: 1.6441094
 --- !u!1 &1717330519
 GameObject:
   m_ObjectHideFlags: 0
