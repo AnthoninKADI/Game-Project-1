@@ -347,8 +347,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 571e99500ddd3fd43ba8ac4c441b749b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemySpotCollider: {fileID: 0}
-  KillEnemyCollider: {fileID: 0}
   ShootAnimation: {fileID: 6807430653026848851}
   ExclamationMark: {fileID: 6807430653377128810}
 --- !u!1 &6807430654282302306
