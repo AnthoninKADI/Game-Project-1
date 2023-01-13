@@ -183,6 +183,7 @@ public class PlayerController : MonoBehaviour
     {
         if (context.started && lastPressed + electricityCooldown <= Time.time)
         {
+            CameraShakes.Instance.ShakeCamera(12f, .1f);
             _playerAnimation.AttackON();
             electric.SetActive(true);
             ElectricityActive = true;
