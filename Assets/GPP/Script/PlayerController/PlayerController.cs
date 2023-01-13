@@ -47,8 +47,6 @@ public class PlayerController : MonoBehaviour
     private GameObject electric;
     [HideInInspector]
     public bool ElectricityActive;
-    private float lastPressed;
-    public float electricityCooldown = 1f;
     public float electricityDuration = 2f;
 
     [Header("")]
@@ -166,18 +164,12 @@ public class PlayerController : MonoBehaviour
 
     public void Electric(InputAction.CallbackContext context)
     {
-        if (context.started && lastPressed + electricityCooldown <= Time.time)
+        if (context.started)
         {
             CameraShakes.Instance.ShakeCamera(12f, .1f);
             _playerAnimation.AttackON();
             electric.SetActive(true);
             ElectricityActive = true;
-            Invoke("StopElectricity", electricityDuration);
-        }
-        else if(Time.time < electricityCooldown)
-        {
-            electric.SetActive(true);
-            ElectricityActive = false;
             Invoke("StopElectricity", electricityDuration);
         }
     }
@@ -214,7 +206,6 @@ public class PlayerController : MonoBehaviour
     {
         electric.SetActive(false);
         ElectricityActive = false;
-        lastPressed = Time.time;
     }
 
     private void NotWallJumping()
