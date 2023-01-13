@@ -33,12 +33,10 @@ public class EnemyScript : MonoBehaviour
     private void ShootingAnimation()
     {
         ShootAnimation.SetBool("IsShooting", true);
-        transform.parent.GetComponent<EnemyPatrol>().enabled = false;
     }
     private void ShootingAnimationOff()
     {
         ShootAnimation.SetBool("IsShooting", false);
-        transform.parent.GetComponent<EnemyPatrol>().enabled = true;
     }
 
     private void ExclamationTime()
