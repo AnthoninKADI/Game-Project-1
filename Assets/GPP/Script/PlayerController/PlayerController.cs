@@ -77,6 +77,8 @@ public class PlayerController : MonoBehaviour
     {
         SmoothedMovement();
         AddJumpForce();
+        SetSprite();
+
     }
 
     public void Movement(InputAction.CallbackContext context)
@@ -107,7 +109,7 @@ public class PlayerController : MonoBehaviour
                         hasWallJumped = true;
                         if (smoothedMovementInput.x < -0.1f)
                         {
-                            rb.velocity = new Vector2(smoothedMovementInput.x * speed + wallJumpForce.x, wallJumpForce.y - wrongDirection);
+                            rb.velocity = new Vector2(smoothedMovementInput.x * 5 + wallJumpForce.x, wallJumpForce.y - wrongDirection);
                         }
                         else
                         {
@@ -121,7 +123,7 @@ public class PlayerController : MonoBehaviour
                         hasWallJumped = true;
                         if (smoothedMovementInput.x > 0.1f)
                         {
-                            rb.velocity = new Vector2(smoothedMovementInput.x * speed - wallJumpForce.x, wallJumpForce.y - wrongDirection);
+                            rb.velocity = new Vector2(smoothedMovementInput.x * 5 - wallJumpForce.x, wallJumpForce.y - wrongDirection);
                         }
                         else
                         {
@@ -159,23 +161,6 @@ public class PlayerController : MonoBehaviour
                 rb.velocity = new Vector2(smoothedMovementInput.x * speed, rb.velocity.y);
             }
         }
-
-
-        if (movementInput.x > 0)
-        {
-            if(!rightHitbox && !leftHitbox)
-            {
-                _renderer.flipX = false;
-            }
-        }
-        else if (movementInput.x < 0)
-        {
-            if(!rightHitbox && !leftHitbox)
-            {
-                _renderer.flipX = true;
-            }
-        }
-
         _playerAnimation.Running();
     }
 
@@ -259,6 +244,24 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void SetSprite()
+    {
+        if (rb.velocity.x > 0)
+        {
+            if (!rightHitbox && !leftHitbox)
+            {
+                _renderer.flipX = false;
+            }
+        }
+        else if (rb.velocity.x < 0)
+        {
+            if (!rightHitbox && !leftHitbox)
+            {
+                _renderer.flipX = true;
+            }
+        }
+    }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("platform") || collision.gameObject.CompareTag("Elevator"))
@@ -267,3 +270,4 @@ public class PlayerController : MonoBehaviour
         }
     }
 }
+
