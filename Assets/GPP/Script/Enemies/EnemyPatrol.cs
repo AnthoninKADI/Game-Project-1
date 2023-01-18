@@ -24,8 +24,8 @@ public class EnemyPatrol : MonoBehaviour
     {
         Vector3 dir = target.position - transform.position;
         transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
-
-        if (Vector3.Distance(transform.position, target.position) < speed)
+        Debug.Log(Vector3.Distance(transform.position, target.position));
+        if (Vector3.Distance(transform.position, target.position) < startSpeed*2)
         {
             destPoint = (destPoint + 1) % waypoints.Length;
             target = waypoints[destPoint];
@@ -37,7 +37,7 @@ public class EnemyPatrol : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            speed = 0;
+            Freeze();
             Invoke("ResetSpeed", respawnTime);
         }
     }
@@ -45,5 +45,10 @@ public class EnemyPatrol : MonoBehaviour
     public void ResetSpeed()
     {
         speed = startSpeed;
+    }
+
+    public void Freeze()
+    {
+        speed = 0;
     }
 }

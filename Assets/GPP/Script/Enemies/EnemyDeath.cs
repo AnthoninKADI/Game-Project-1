@@ -9,8 +9,16 @@ public class EnemyDeath : MonoBehaviour
     {
         if (collision.CompareTag("Electric"))
         {
+            GetComponentInParent<EnemyPatrol>().Freeze();
             animator.SetBool("IsDead", true);
-            Destroy(transform.parent.gameObject);
+            Invoke("EnemyDie", 2f);
+            
         }
+
+    }
+
+    void EnemyDie()
+    {
+        Destroy(transform.parent.gameObject);
     }
 }
