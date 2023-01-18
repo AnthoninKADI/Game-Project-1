@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d906623f40ceb74b971f39e3e7f6440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  ZoneDetection: {fileID: 6807430653977631958}
 --- !u!61 &1059296046746856789
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -94,7 +96,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6807430653255941721}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -18.75, y: -1.22, z: 0.1879551}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -198,7 +200,7 @@ GameObject:
   - component: {fileID: 6807430653977631945}
   - component: {fileID: 6807430653977631944}
   - component: {fileID: 6807430653977631947}
-  - component: {fileID: 1281768477331309530}
+  - component: {fileID: 2977276362151939046}
   m_Layer: 0
   m_Name: Triangle
   m_TagString: ZoneDMG
@@ -302,7 +304,7 @@ PolygonCollider2D:
       - {x: -0.47313204, y: -0.22508387}
       - {x: 0.46968058, y: -0.2229988}
   m_UseDelaunayMesh: 0
---- !u!114 &1281768477331309530
+--- !u!114 &2977276362151939046
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -311,13 +313,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6807430653977631958}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 571e99500ddd3fd43ba8ac4c441b749b, type: 3}
+  m_Script: {fileID: 11500000, guid: 92b205770dbddf84996c268e068ef1a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemySpotCollider: {fileID: 0}
-  KillEnemyCollider: {fileID: 0}
-  ShootAnimation: {fileID: 6807430653026848851}
+  ShootAnimation: {fileID: 0}
   ExclamationMark: {fileID: 6807430653377128810}
+  Gun: {fileID: 6807430654112420303}
 --- !u!1 &6807430654112420303
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,11 +441,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6421067459152097372, guid: cdc2a222ef466f044b44b0e0fe7db94a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.133347
+      value: -17.65
       objectReference: {fileID: 0}
     - target: {fileID: 6421067459152097372, guid: cdc2a222ef466f044b44b0e0fe7db94a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.3668404
+      value: -3.56
       objectReference: {fileID: 0}
     - target: {fileID: 6421067459152097372, guid: cdc2a222ef466f044b44b0e0fe7db94a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -574,26 +575,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.076046, y: 3.6235964}
   m_EdgeRadius: 0
---- !u!95 &6807430653026848851
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 532811008150785287}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 20909477a95a76043a589cfef7e678fc, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &6807430653026848848
 MonoBehaviour:
   m_ObjectHideFlags: 0
