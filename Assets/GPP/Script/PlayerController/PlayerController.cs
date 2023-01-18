@@ -47,8 +47,6 @@ public class PlayerController : MonoBehaviour
     private GameObject electric;
     [HideInInspector]
     public bool ElectricityActive;
-    private float lastPressed;
-    public float electricityCooldown = 1f;
     public float electricityDuration = 2f;
 
     [Header("")]
@@ -77,6 +75,8 @@ public class PlayerController : MonoBehaviour
     {
         SmoothedMovement();
         AddJumpForce();
+        SetSprite();
+
     }
 
     public void Movement(InputAction.CallbackContext context)
@@ -107,7 +107,7 @@ public class PlayerController : MonoBehaviour
                         hasWallJumped = true;
                         if (smoothedMovementInput.x < -0.1f)
                         {
-                            rb.velocity = new Vector2(smoothedMovementInput.x * speed + wallJumpForce.x, wallJumpForce.y - wrongDirection);
+                            rb.velocity = new Vector2(smoothedMovementInput.x * 5 + wallJumpForce.x, wallJumpForce.y - wrongDirection);
                         }
                         else
                         {
@@ -121,7 +121,7 @@ public class PlayerController : MonoBehaviour
                         hasWallJumped = true;
                         if (smoothedMovementInput.x > 0.1f)
                         {
-                            rb.velocity = new Vector2(smoothedMovementInput.x * speed - wallJumpForce.x, wallJumpForce.y - wrongDirection);
+                            rb.velocity = new Vector2(smoothedMovementInput.x * 5 - wallJumpForce.x, wallJumpForce.y - wrongDirection);
                         }
                         else
                         {
@@ -159,39 +159,17 @@ public class PlayerController : MonoBehaviour
                 rb.velocity = new Vector2(smoothedMovementInput.x * speed, rb.velocity.y);
             }
         }
-
-
-        if (movementInput.x > 0)
-        {
-            if(!rightHitbox && !leftHitbox)
-            {
-                _renderer.flipX = false;
-            }
-        }
-        else if (movementInput.x < 0)
-        {
-            if(!rightHitbox && !leftHitbox)
-            {
-                _renderer.flipX = true;
-            }
-        }
-
         _playerAnimation.Running();
     }
 
     public void Electric(InputAction.CallbackContext context)
     {
-        if (context.started && lastPressed + electricityCooldown <= Time.time)
+        if (context.started)
         {
+            CameraShakes.Instance.ShakeCamera(12f, .1f);
             _playerAnimation.AttackON();
             electric.SetActive(true);
             ElectricityActive = true;
-            Invoke("StopElectricity", electricityDuration);
-        }
-        else if(Time.time < electricityCooldown)
-        {
-            electric.SetActive(true);
-            ElectricityActive = false;
             Invoke("StopElectricity", electricityDuration);
         }
     }
@@ -228,7 +206,6 @@ public class PlayerController : MonoBehaviour
     {
         electric.SetActive(false);
         ElectricityActive = false;
-        lastPressed = Time.time;
     }
 
     private void NotWallJumping()
@@ -258,6 +235,24 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void SetSprite()
+    {
+        if (rb.velocity.x > 0)
+        {
+            if (!rightHitbox && !leftHitbox)
+            {
+                _renderer.flipX = false;
+            }
+        }
+        else if (rb.velocity.x < 0)
+        {
+            if (!rightHitbox && !leftHitbox)
+            {
+                _renderer.flipX = true;
+            }
+        }
+    }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("platform") || collision.gameObject.CompareTag("Elevator"))
@@ -266,3 +261,4 @@ public class PlayerController : MonoBehaviour
         }
     }
 }
+
