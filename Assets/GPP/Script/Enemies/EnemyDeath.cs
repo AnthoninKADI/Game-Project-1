@@ -1,24 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyDeath : MonoBehaviour
 {
     public Animator animator;
-    public GameObject DetectionZone;
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Electric"))
         {
+            GetComponentInParent<EnemyPatrol>().Freeze();
             animator.SetBool("IsDead", true);
-            DetectionZone.SetActive(false);
-            Invoke("DeathEnemy",1.5f);
+            Invoke("EnemyDie", 2f);
+            
         }
+
     }
 
-    private void DeathEnemy()
+    void EnemyDie()
     {
         Destroy(transform.parent.gameObject);
     }
