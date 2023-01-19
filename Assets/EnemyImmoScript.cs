@@ -9,7 +9,7 @@ public class EnemyImmoScript : MonoBehaviour
     [SerializeField]
     private Animator ShootAnimation;
     [SerializeField]
-    private GameObject ExclamationMark, Gun;
+    private GameObject ExclamationMark;
     private float respawnTime;
 
 
@@ -22,7 +22,6 @@ public class EnemyImmoScript : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Gun.SetActive(false);
             ExclamationMark.SetActive(true);
             Invoke("ExclamationTime", respawnTime);
             Invoke("ShootingAnimation", 0.2f);
@@ -38,7 +37,6 @@ public class EnemyImmoScript : MonoBehaviour
     private void ShootingAnimationOff()
     {
         ShootAnimation.SetBool("IsShooting", false);
-        Gun.SetActive(true);
     }
 
     private void ExclamationTime()
