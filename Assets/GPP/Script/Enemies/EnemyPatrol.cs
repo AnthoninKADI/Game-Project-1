@@ -24,7 +24,6 @@ public class EnemyPatrol : MonoBehaviour
     {
         Vector3 dir = target.position - transform.position;
         transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
-        Debug.Log(Vector3.Distance(transform.position, target.position));
         if (Vector3.Distance(transform.position, target.position) < startSpeed*2)
         {
             destPoint = (destPoint + 1) % waypoints.Length;

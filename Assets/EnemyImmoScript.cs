@@ -38,6 +38,7 @@ public class EnemyImmoScript : MonoBehaviour
     private void ShootingAnimationOff()
     {
         ShootAnimation.SetBool("IsShooting", false);
+        Gun.SetActive(true);
     }
 
     private void ExclamationTime()
