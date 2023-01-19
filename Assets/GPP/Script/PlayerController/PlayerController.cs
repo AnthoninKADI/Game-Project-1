@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Electricity")]
     [SerializeField]
-    private GameObject electric;
+    private GameObject electric, electricVFX;
     [HideInInspector]
     public bool ElectricityActive;
     public float electricityDuration = 2f;
@@ -66,6 +66,7 @@ public class PlayerController : MonoBehaviour
         _renderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         electric.SetActive(false);
+        electricVFX.SetActive(false);
         interaction.SetActive(false);
         ElectricityActive = false;
         startSpeed = speed;
@@ -169,6 +170,7 @@ public class PlayerController : MonoBehaviour
             CameraShakes.Instance.ShakeCamera(12f, .1f);
             _playerAnimation.AttackON();
             electric.SetActive(true);
+            electricVFX.SetActive(true);
             ElectricityActive = true;
             Invoke("StopElectricity", electricityDuration);
         }
@@ -205,6 +207,7 @@ public class PlayerController : MonoBehaviour
     private void StopElectricity()
     {
         electric.SetActive(false);
+        electricVFX.SetActive(false);
         ElectricityActive = false;
     }
 
