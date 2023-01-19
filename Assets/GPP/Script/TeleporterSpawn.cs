@@ -17,6 +17,7 @@ public class TeleporterSpawn : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player");
         tpCollider= tp1.GetComponent<Collider2D>();
+        tpCollider.enabled = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -24,7 +25,23 @@ public class TeleporterSpawn : MonoBehaviour
        
         if (collision.gameObject.CompareTag("Player"))
         {
-            player.transform.position = new Vector2(tp2.transform.position.x, tp2.transform.position.y);
+            GameManager.instance.BlackScreenObject.SetActive(true);
+            player.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            player.GetComponent<Rigidbody2D>().isKinematic = true;
+            Invoke("BlackScreen",1.65f);
         }
+    }
+
+    private void BlackScreen()
+    {
+        //player.GetComponent<Rigidbody2D>().gravityScale = 8;
+        GameManager.instance.BlackScreenObject.SetActive(false);
+        Invoke("ChangePosition", 0f);
+    }
+
+    private void ChangePosition()
+    {
+        player.GetComponent<Rigidbody2D>().isKinematic = false;
+        player.transform.position = new Vector2(tp2.transform.position.x, tp2.transform.position.y);
     }
 }
