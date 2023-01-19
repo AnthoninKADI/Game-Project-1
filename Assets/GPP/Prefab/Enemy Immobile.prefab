@@ -31,7 +31,7 @@ Transform:
   m_Children:
   - {fileID: 532811008150785288}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &483791740
 Animator:
@@ -61,6 +61,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 6807430653255941720}
     m_Modifications:
+    - target: {fileID: 1515907447247887424, guid: cdc2a222ef466f044b44b0e0fe7db94a, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 483791740}
     - target: {fileID: 2977276362151939046, guid: cdc2a222ef466f044b44b0e0fe7db94a, type: 3}
       propertyPath: ShootAnimation
       value: 
