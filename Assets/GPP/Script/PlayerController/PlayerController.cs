@@ -244,6 +244,7 @@ public class PlayerController : MonoBehaviour
         {
             if (!rightHitbox && !leftHitbox)
             {
+                electricVFX.transform.localPosition = new Vector3(1.2f,0.8f);
                 _renderer.flipX = false;
             }
         }
@@ -251,6 +252,7 @@ public class PlayerController : MonoBehaviour
         {
             if (!rightHitbox && !leftHitbox)
             {
+                electricVFX.transform.localPosition = new Vector3(-1.2f, 0.8f);
                 _renderer.flipX = true;
             }
         }
