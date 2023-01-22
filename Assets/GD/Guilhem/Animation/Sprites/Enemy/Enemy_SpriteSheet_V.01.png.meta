@@ -103,6 +103,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -259,8 +271,8 @@ TextureImporter:
         serializedVersion: 2
         x: 2550
         y: 1262
-        width: 169
-        height: 276
+        width: 170
+        height: 370
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -344,7 +356,7 @@ TextureImporter:
         x: 1519
         y: 1264
         width: 122
-        height: 363
+        height: 370
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -365,7 +377,7 @@ TextureImporter:
         x: 2024
         y: 1258
         width: 151
-        height: 340
+        height: 370
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -386,7 +398,7 @@ TextureImporter:
         x: 0
         y: 845
         width: 212
-        height: 264
+        height: 370
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -404,10 +416,10 @@ TextureImporter:
       name: Enemy_SpriteSheet_V.01_14
       rect:
         serializedVersion: 2
-        x: 551
+        x: 555
         y: 845
         width: 175
-        height: 266
+        height: 370
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -428,7 +440,7 @@ TextureImporter:
         x: 1050
         y: 844
         width: 269
-        height: 392
+        height: 370
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -470,7 +482,7 @@ TextureImporter:
         x: 1528
         y: 851
         width: 377
-        height: 143
+        height: 370
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -491,7 +503,7 @@ TextureImporter:
         x: 2044
         y: 847
         width: 393
-        height: 89
+        height: 370
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -512,7 +524,7 @@ TextureImporter:
         x: 2557
         y: 844
         width: 369
-        height: 115
+        height: 370
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -698,10 +710,10 @@ TextureImporter:
       name: Enemy_SpriteSheet_V.01_28
       rect:
         serializedVersion: 2
-        x: 2511
-        y: 415
-        width: 244
-        height: 367
+        x: 2519
+        y: 421
+        width: 237
+        height: 360
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -727,8 +739,8 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Enemy_SpriteSheet_V.01_19: -1119601318
-      Enemy_SpriteSheet_V.01_9: -395516223
-      Enemy_SpriteSheet_V.01_10: 635141477
+      Enemy_SpriteSheet_V.01_21: 973427639
+      Enemy_SpriteSheet_V.01_23: 718017585
       Enemy_SpriteSheet_V.01_0: 1072005133
       Enemy_SpriteSheet_V.01_25: 678169686
       Enemy_SpriteSheet_V.01_4: -1072750825
@@ -750,11 +762,11 @@ TextureImporter:
       Enemy_SpriteSheet_V.01_14: 1218096639
       Enemy_SpriteSheet_V.01_13: -744737006
       Enemy_SpriteSheet_V.01_3: 2101716083
-      Enemy_SpriteSheet_V.01_15: -1719304858
       Enemy_SpriteSheet_V.01_1: -895079169
-      Enemy_SpriteSheet_V.01_21: 973427639
-      Enemy_SpriteSheet_V.01_23: 718017585
+      Enemy_SpriteSheet_V.01_10: 635141477
+      Enemy_SpriteSheet_V.01_15: -1719304858
       Enemy_SpriteSheet_V.01_12: -1335401420
+      Enemy_SpriteSheet_V.01_9: -395516223
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
