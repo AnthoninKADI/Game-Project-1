@@ -9,12 +9,13 @@ public class SettingsMenu : MonoBehaviour
 {
     public AudioMixer audioMixer;
 
-    Resolution[] resolutions;
+    //Resolution[] resolutions;
 
-    public TMP_Dropdown resolutionDropdown;
+    //public TMP_Dropdown resolutionDropdown;
 
     public void Start()
     {
+        /*
         resolutions = Screen.resolutions.Select(resolution => new Resolution { width = resolution.width, height = resolution.height }).Distinct().ToArray();
         resolutionDropdown.ClearOptions();
 
@@ -36,6 +37,7 @@ public class SettingsMenu : MonoBehaviour
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
+        */
         Screen.fullScreen = true;
     }
 
@@ -58,9 +60,9 @@ public class SettingsMenu : MonoBehaviour
     }
 
 
-    public void SetResolution(int resolutionIndex)
+    /*public void SetResolution(int resolutionIndex)
     {
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
-    }
+    }*/
 }
